@@ -1,0 +1,27 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories - divergences</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on divergences</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 27 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Deep Learning Artificial Intelligence</title>
+      <link>/categories/deep-learning-artificial-intelligence/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/deep-learning-artificial-intelligence/</guid>
+      <description></description>
+    </item><item>
+      <title>Ethics and Society</title>
+      <link>/categories/ethics-and-society/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/ethics-and-society/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

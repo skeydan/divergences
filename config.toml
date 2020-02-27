@@ -1,0 +1,13 @@
+baseurl = "/"
+title = "divergences"
+author = "Sigrid Keydana"
+canonifyurls = true
+paginate = 3
+theme = "aether"
+enableRobotsTXT = true
+canonifyURLs = true
+
+[params]
+brand = "divergences"
+description = ""
+homeimg = "img/bg.jpg"

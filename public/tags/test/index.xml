@@ -1,0 +1,21 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>test - divergences</title>
+    <link>/tags/test/</link>
+    <description>Recent content in test on divergences</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 27 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The hard problem of privacy</title>
+      <link>/posts/hard_problem_privacy/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/hard_problem_privacy/</guid>
+      <description>We live in a world of ever-diminishing privacy and ever-increasing surveillance - and this is a statement not just about openly-authoritarian regimes. Yet, we seem not to care that much, at least not until, for whatever reasons, we are personally affected by some negative consequence. This post wants to help increase awareness, casting a spotlight on recent history and also, letting words speak for themselves: Because nothing, to me, is less revealing than the &#34;visions&#34; that underly the actions.
+</description>
+    </item>
+  </channel>
+</rss>
