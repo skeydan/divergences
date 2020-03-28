@@ -1,7 +1,7 @@
 ---
 categories:
 - Ethics and Society
-- Deep Learning Artificial Intelligence
+- Artificial Intelligence
 date: "2020-02-27"
 description: >
   We live in a world of ever-diminishing privacy and ever-increasing surveillance - and this is a statement not just about openly-authoritarian regimes. Yet, we seem not to care that much, at least not until, for whatever reasons, we are personally affected by some negative consequence. This post wants to help increase awareness, casting a spotlight on recent history and also, letting words speak for themselves: Because nothing, to me, is less revealing than the "visions" that underly the actions.
