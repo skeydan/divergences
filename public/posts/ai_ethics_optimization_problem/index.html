@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>AI ethics is not an optimization problem &middot; divergences</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  
+  
+  
+  
+  
+  <link href="/css/concated.min.css" rel="stylesheet">
+  
+  
+</head>
+
+  <body class="single-body">
+    <nav class="nav-bar side-padding">
+  <h1 class="nav-header"><a href="/" class="nav-text">divergences</a></h1>
+  <div class="hamburger-menu">
+    <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="menu" class="hamburger-menu-overlay">
+      <li><a href="/" class="hamburger-menu-overlay-link">Home</a></li>
+      <li><a href="/about/" class="hamburger-menu-overlay-link">About</a></li>
+      
+      <li><a href="/categories/artificial-intelligence/" class="hamburger-menu-overlay-link">Artificial Intelligence</a></li>
+      
+      <li><a href="/categories/ethics-and-society/" class="hamburger-menu-overlay-link">Ethics and Society</a></li>
+      
+      
+    </ul>
+  </div>
+</nav>
+
+    <main class="content side-text-padding">
+      <article class="post dropcase">
+        <header class="post-header">
+        	<h1 class="post-title">AI ethics is not an optimization problem</h1>
+          <p class="post-date">Posted <time datetime="2020-09-22">Sep 22, 2020</time></p>
+        </header>
+        
+        
+        <hr>
+<h3 id="ai-ethics-is-not-an-optimization-problem">AI ethics is not an optimization problem</h3>
+<p><em>Often, AI researchers and engineers think of themselves as neutral and
+&ldquo;objective&rdquo;, operating in a framework of strict formalization. Fairness
+and absence of bias, however, are social constructs; there is no
+objectivity, no LaTeX-typesettable remedies, no algorithmic way out. AI
+models are developed based on a history and deployed in a context. In AI
+as in data science, the very absence of action can be of political
+significance.</em></p>
+<h3 id="why-this-post-whynow">Why this post, why now</h3>
+<p>When you work in a field as intellectually-satisfying, challenging and
+inspiring as software design for machine learning, it is easy to focus
+on the technical, keeping out of sight the broader context. Some would
+even say it is required. How else can you keep up the necessary level of
+concentration?</p>
+<p>But even for someone who hasn&rsquo;t been in the field that long, it is
+evident that with every year that passes, with deep-learning-based
+technologies<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> progressing faster and faster over ever-shorter time
+spans, misuse of these technologies has increased as well, not just in
+selected countries but all over the world.</p>
+<p>To eliminate one possible misunderstanding right from the start: When
+I&rsquo;m talking about &ldquo;faster and faster&rdquo; progress, I&rsquo;m not over-hyping
+things. I&rsquo;m far from thinking that <em>AI</em> is close to &ldquo;solving&rdquo; problems
+like language understanding, concept learning and their likes &mdash; the
+kind of problems <a href="https://arxiv.org/abs/2002.06177">some would argue hybrid models were needed
+for</a>. The thing is that it doesn&rsquo;t
+matter. It is exactly the kinds of things <em>AI</em> <em>does</em> do so well that
+lend themselves to misuse. It is people we should be afraid of, not
+machines<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+<p>Back to the why. Over time, it increasingly appeared to me that writing
+regularly about <em>AI</em> in a technical way, but <em>not ever</em> writing about
+its misuse, was ethically questionable in itself. However, I also became
+increasingly conscious of the fact that with a topic like this, once you
+enter the political realm &mdash; and that we <em>have to</em> is the main point of
+this text &ndash;, likelihood rises that people will disagree, or worse, feel
+offended for reasons not anticipated by the writer. Some will find this
+too radical, some not radical (<em>explicit</em>) enough.</p>
+<p>But when the alternative is to stay silent, it seems better to try and
+do one&rsquo;s best.</p>
+<p>Let&rsquo;s start with two terms whose recent rise in popularity matches that
+of <em>AI</em> as a whole: bias and fairness.</p>
+<h3 id="but-we-are-doing-a-lot-to-improve-fairness-and-remove-bias-arentwe">But we are doing a lot to improve fairness and remove bias, aren&rsquo;t we?</h3>
+<p>Search for &ldquo;algorithmic fairness&rdquo;, &ldquo;deep learning fairness&rdquo; or something
+similar, and you&rsquo;ll find lots of papers, tools, guidelines &hellip; more than
+you have time to read. And bias: Haven&rsquo;t we all heard about image
+recognition models failing on black people, women, and black women in
+particular; about machine translation incorporating gender stereotypes;
+about search engine results reflecting racism and discrimination? Given
+enough media attention, the respective algorithms get &ldquo;fixed&rdquo;; what&rsquo;s
+more, we may also safely assume that overall, researchers developing new
+models will probe for these exact kinds of failures. So as a community,
+we <em>do</em> care about bias, don&rsquo;t we?</p>
+<p>Re: fairness. It&rsquo;s true that there are many attempts to increase
+algorithmic fairness. But as Ben Green, who I&rsquo;ll cite a lot in this
+text, <a href="https://dl.acm.org/doi/10.1145/3351095.3372840">points out</a>, most
+of this work does so via rigid formalization, as if fairness &mdash; its
+<a href="https://www.youtube.com/watch?v=jIXIuYdnyyk">conflicting definitions</a>
+notwithstanding &mdash; were an objective quantity, a metric that could be
+optimized just like the metrics we usually optimize in machine learning.</p>
+<p>Assume we were willing to stay in the formalist frame. Even then there
+is no satisfying solution to this optimization problem. Take the
+perspective of <em>group fairness</em>, where a fair algorithm is one that
+results in equal outcomes between groups.
+<a href="https://doi.org/10.1089/big.2016.0047">Chouldechova</a> then shows that
+when an algorithm achieves predictive parity (a.k.a. precision), but
+prevalence differs between groups, it is not possible to also have
+<em>both</em> equal false positive <em>and</em> equal false negative rates.</p>
+<p>That said, here I mainly want to focus on why pure formalism is not
+enough.</p>
+<p>What with bias? That datasets can be (or rather: are) biased is hardly
+something anyone working in <em>AI</em> would object to. What amount of bias is
+being admitted to in other components/stages of the machine learning
+process varies between people.</p>
+<p><a href="http://arxiv.org/abs/1901.10002">Harini and Guttag</a> map sources of bias
+to the model development and deployment process. Forms of bias they
+distinguish include representation (think: dataset), measurement (think:
+metrics<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>), aggregation (think: model<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>), and evaluation (similar to
+the two preceding ones, but at test time) bias. The paper is written in
+a technical style; in fact, there is even a diagram where the authors
+attempt to formalize the process in a mathematical way. (Personally, I
+find it hard to see what value is added by this diagram; its existence
+can probably best be explained by [perceived] requirements of the
+genre, namely, <em>research paper</em>.)</p>
+<p>Now, so far I&rsquo;ve left out the remaining two sources of bias they name.
+Mapped to the end of the process is deployment bias, when a system &ldquo;is
+used or interpreted in inappropriate ways&rdquo;. That raises a question. Is
+this about the <em>end</em> of a process, or is what happens now a <em>completely
+different process</em> (or: processes)? For an in-house data scientist, it
+may well be the end of a process; for a scientist, or for a consultant,
+it is not. Once a scientist has developed and published a model, they
+have no control over who uses it and how. From the collection of
+humankind&rsquo;s empirical truths: Once a technology exists, and it is
+useful, it <em>will be used</em>.</p>
+<p>Things get further out of control at the other side of the timeline.
+Here we have <a href="http://arxiv.org/abs/1901.10002">historical bias</a>:</p>
+<blockquote>
+<p><em>Historical bias arises when there is a misalignment between the world
+as it is and the values or objectives to be encoded and propagated in
+a model. It is a normative concern with the state of the world, and
+exists even given perfect sampling and feature selection.</em></p>
+</blockquote>
+<p>I&rsquo;ll get back to why this is called &ldquo;historical bias&rdquo; later; the
+definition is a lot broader though. Now definitely we&rsquo;re beyond the
+realm of formalization: We&rsquo;re entering the realm of normativity, of ways
+of viewing the world, of ethics.</p>
+<p>Please don&rsquo;t get me wrong. I&rsquo;m not criticizing the paper; in fact, it
+provides a useful categorization that may be used as a &ldquo;check list&rdquo; by
+practitioners. But given the formalist style, a reader is likely to
+focus on the readily-formalizable parts. It is then easy to dismiss the
+two others as not really being relevant to one&rsquo;s work, and certainly not
+something one could exert influence on. (I&rsquo;ll get back to that later.)</p>
+<p>One little aside before we leave formalism: I do believe that a lot of
+the formalist work on <em>AI</em> ethics is done in good intent; however, work
+in this area also benefits organizations that undertake it. Citing <a href="https://tomslee.github.io/publication/oup_private_sector_ai/">Tom
+Slee</a>,</p>
+<blockquote>
+<p><em>Standards set public benchmarks and provide protection from future
+accusations. Auditable criteria incorporated into product development
+and release processes can confirm compliance. There are also financial
+incentives to adopt a technical approach: standards that demand
+expertise and investment create barriers to entry by smaller firms,
+just as risk management regulations create barriers to entry in the
+financial and healthcare industries.</em></p>
+</blockquote>
+<h3 id="not-everything-in-life-is-an-optimization-problem">Not everything in life is an optimization problem</h3>
+<p>Stephen Boyd, who teaches convex optimization at Stanford, is said to
+often start the<a href="https://www.youtube.com/watch?v=McLq1hEq3UY">introductory
+lecture</a> with the phrase
+&ldquo;everything is an optimization problem&rdquo;. It sounds intriguing at first;
+certainly a lot of things in my life can be thought of like that. It may
+become awkward once you start to compare, say, time spent with loved
+ones and time spent working; it becomes completely unfeasible when
+comparing <em>across people</em>.</p>
+<p>We saw that even under formalist thinking, there is no impartial way to
+optimize for fairness. But it&rsquo;s not just about choosing between
+different types of fairness. How do you weigh fairness against
+stakeholder interests? No algorithm will be deployed that does not serve
+an organization&rsquo;s purpose.</p>
+<p>There is thus an intimate link between <em>metrics</em>, <em>objectives</em> and
+<em>power</em>.</p>
+<h3 id="metrics-andpower">Metrics and power</h3>
+<p>Even though terminologically, in deep learning, we distinguish between
+optimization and metrics, the metrics really <a href="http://arxiv.org/abs/2002.08512">are what we are optimizing
+for</a>: Goodhart&rsquo;s law &mdash; <em>When a
+measure becomes a target, it ceases to be a good measure</em><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>&mdash; does
+not seem to apply. Still, they deserve the same questioning and
+inspection as metrics in other contexts.</p>
+<p>In AI as elsewhere, optimization objectives are proxies; they &ldquo;stand in&rdquo;
+for the thing we&rsquo;re really interested in. That proxying process could
+<a href="http://arxiv.org/abs/1803.04585">fail in many ways</a>, but failure is not
+the only applicable category to think in here.</p>
+<p>For one, objectives are chosen according to the dominant paradigm.
+<a href="http://arxiv.org/abs/1912.01172">Dotan and Milli</a> show how a
+technology&rsquo;s perceived success feeds back into the criteria used to
+evaluate other technologies (as well as future instances of itself).
+Imagine a world where models were ranked not just for classification
+accuracy, but also for, say, climate friendliness, robustness to
+adversarial attacks, or reliable quantification of uncertainty.</p>
+<p>Objectives thus do not emerge out of nothing. That they reflect
+paradigms may still sound abstract; that they serve existing power
+structures less so. Power structures are complex; they reflect more than
+just who &ldquo;has the say&rdquo;. As pointed out in various &ldquo;classics&rdquo; of critical
+race theory, intersectionalist feminism and related areas<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>, we should
+ask ourselves: <em>Who profits?</em></p>
+<p>This is an all but simple question, comparable in difficulty, it seems
+to me, to the request that we question the unspoken premises that
+underlie our theories. The main point about such premises is that we
+aren&rsquo;t aware of them: If we were, we could have stated them explicitly.
+Similarly, if I noticed I was profiting from someone, I
+would &mdash; hopefully &mdash; take some action. Hard as the task may be,
+though, we have to do our best.</p>
+<p>If it&rsquo;s hard to see how one is privileged, can&rsquo;t we just be neutral?
+Objective? Isn&rsquo;t this getting too <em>political</em>?</p>
+<h3 id="there-is-no-objectivity-and-all-ispolitics">There is no objectivity, and all is politics</h3>
+<p>To some people, the assertion that objectivity cannot exist is too
+self-evident to require much dwelling on. Are numbers objective? Maybe
+in some formal way; but once I use them <em>in communication</em>, they convey
+a message, independently of my intention. </p>
+<p>Let&rsquo;s say I want to convey the fact, taken from <a href="https://www.ipcc.ch/sr15/chapter/spm/">the IPCC
+website</a>, that between 2030 and
+2052, global warming is likely to reach 1.5°C. Let&rsquo;s also assume that I
+look up the pre-industrial average for the place where I happen to live
+(15°C, say), and that I want to show off my impressive meteorological
+knowledge. Thus I say, &ldquo;&hellip; so here, guys, temperature will rise from
+288.15 Kelvin to 289.65 Kelvin, on average&rdquo;. This surely is an objective
+statement. But what if the people I&rsquo;m talking to don&rsquo;t know
+that &mdash; even though the absolute values, when expressed in Kelvin, are
+so much higher than when expressed in degrees Celsius &mdash; the relative
+differences are the same? They might get the impression, totally
+unintended, that not much warming is going to happen.</p>
+<p>If even numbers, once used in communication, lose their objectivity,
+this must hold even more for anything that involves more design choices:
+visualizations, APIs, and, of course, written text. For visualizations,
+this is nicely illustrated in d&rsquo;Ignazio and Klein&rsquo;s <em>Data Feminism</em>.</p>
+<p>That book is also an exemplary exercise in what appears like the only
+way to &ldquo;deal with&rdquo; the fact that objectivity is impossible: Trying to be
+as clear as possible about where we stand, who we are, what are the
+circumstances that have influenced our way of thinking. Of course, like
+with the unspoken premises and assumptions discussed above, this is not
+easy; in fact, it&rsquo;s impossible to do in perfection. But one can try.</p>
+<p>In fact, the above &ldquo;Trying to be as clear as possible &hellip; &quot; is
+deliberately ambiguous. It refers to two things: For one, to <em>me</em>
+striving to analyze how I&rsquo;m privileged, and secondly, to me giving
+information to <em>others</em>. The first alone is laudable but necessarily
+limited; the second, as exercised by d&rsquo;Ignazio and Klein, opens the door
+not just for better mutual understanding, but also, for feedback and
+learning. The person I&rsquo;m talking to might lead me to insights I wouldn&rsquo;t
+have gotten otherwise.</p>
+<p>Putting things slightly differently, there is no objectivity because
+there&rsquo;s always a context. Focus on metrics and formalization detract
+from that context. Green
+<a href="https://dl.acm.org/doi/10.1145/3351095.3372840">relates</a> an interesting
+parallel from American law history. Until the early twentieth century,
+US law was dominated by a formalist ethos. Ideally, all rules should be
+traceable to a small number of universal principles, derived from
+natural rights. Autonomy being such a right, in a famous 1905 case, the
+U.S. Supreme Court concluded that a law limiting the working hours of
+employees represented &ldquo;unreasonable, unnecessary and arbitrary
+interference with the right and liberty of the individual to contract&rdquo;.
+<a href="https://dl.acm.org/doi/10.1145/3351095.3372840">However</a>,</p>
+<blockquote>
+<p><em>In his dissent, Justice Oliver Wendell Holmes argued that the Court
+failed to consider the context of the case, noting, &ldquo;General
+propositions do not decide concrete cases&rdquo;.</em></p>
+</blockquote>
+<p>Thus, the <em>context</em> matters. Autonomy is good; but it can&rsquo;t be used as
+an excuse for exploitation.</p>
+<p>The same context dependence holds in <em>AI</em>. It is always developed and
+deployed in a context, &mdash; a context shaped by <em>history</em>. History
+determines what datasets we work with; what we optimize for; <em>who</em> tells
+us what to optimize for. An daunting example is so-called &ldquo;predictive
+policing&rdquo;. Datasets used to train prediction algorithms incorporate a
+history of racial injustice: The very definition of &ldquo;crime&rdquo; they rely on
+was<a href="https://dl.acm.org/doi/10.1145/3351095.3372840">shaped by racist and classist
+practice</a>. The new
+method then perpetuates &mdash; more than that: exacerbates &mdash; the current
+system, creating a vicious cycle of positive feedback that makes it look
+like the algorithm was successful.</p>
+<p>Summing up: When there is no neutrality, everything is politics. Not
+acting is acting. Citing
+<a href="https://www.benzevgreen.com/wp-content/uploads/2019/11/19-ai4sg.pdf">Green</a>,</p>
+<blockquote>
+<p><em>But efforts for reform are no more political than efforts to resist
+reform or even the choice simply to not act, both of which preserve
+existing systems.</em></p>
+</blockquote>
+<h3 id="but-im-just-anengineer">But I&rsquo;m just an engineer</h3>
+<p>When machine learning people, or computer science people in general, are
+asked about their views on the societal impact of modern <em>AI</em>, an
+often-heard answer is: &ldquo;But I&rsquo;m just an engineer&hellip;&quot;. This is completely
+understandable. Most of us are just tiny cogs in those big machines,
+wired together in a complex network, that run the world. We&rsquo;re not in
+control; how could we be accountable?</p>
+<p>For the <em>AI</em> scientist, though normally all but sitting in an &ldquo;ivory
+tower&rdquo;, it&rsquo;s nevertheless the <em>ML engineers</em> who are responsible of how
+a model gets deployed, and to what consequences⁷. The ML engineer may
+delegate to the head of IT, who in turn had no choice but implement what
+was requested &ldquo;by business&rdquo;. And so on and so forth, ad infinitum.</p>
+<p>That said, it is hard to come up with a moral imperative here. In the
+line of thinking exercised above: There is always a context. In some
+parts of the world, you have more choices than in others. Options vary
+based on race, gender, abledness, and more. Maybe you can just quit and
+get another job; maybe you can&rsquo;t.</p>
+<p>There is another &mdash; related &mdash; point though, on which I&rsquo;d like to
+dwell a little longer.</p>
+<h3 id="technology-optimism">Technology optimism</h3>
+<p>Sometimes, it&rsquo;s not that the people working in AI are fully aware of,
+but don&rsquo;t see how to counter, the harm that is being done in their
+field. On the contrary. They are convinced that they&rsquo;re doing good. Just
+do a quick search for &ldquo;AI for good&rdquo;, and you&rsquo;ll be presented with a
+great number of projects and initiatives. But how, actually, is decided
+what <em>is</em> good? Who decides? Who profits?</p>
+<p>Ben Green, again,
+<a href="https://dl.acm.org/doi/10.1145/3351095.3372840">relates</a> an instructive
+example:</p>
+<blockquote>
+<p><em>USC&rsquo;s Center for Artificial Intelligence in Society (CAIS) is
+emblematic of how computer science projects labeled as promoting
+&ldquo;social good&rdquo; can cause harm by wading into hotly contested political
+territory with a regressive perspective. One of the group&rsquo;s projects
+involved deploying game theory and machine learning to predict and
+prevent behavior from &ldquo;adversarial groups.&rdquo; Although CAIS motivated
+the project by discussing &ldquo;extremist organizations such as ISIS and
+Jabhat al-Nusra,&rdquo; it quickly slipped into focusing on &ldquo;criminal street
+gangs&rdquo; [43]. In fact, the project&rsquo;s only publication was a
+controversial paper that used neural networks to classify crimes in
+Los Angeles as gang-related [28, 41].</em></p>
+</blockquote>
+<p>Predictive policing, already mentioned above, can also be seen in this
+category. At first thought, isn&rsquo;t it a good thing? Wouldn&rsquo;t it be nice
+if we could make our world a bit more secure?</p>
+<p>Phillip Rogaway, who I&rsquo;ll mention again in the concluding section, talks
+a lot about <a href="https://eprint.iacr.org/2015/1162">how technology optimism dominates among his
+students</a>; he seems to be as
+intrigued by it as I am. Personally, I think that whether someone
+&ldquo;intrinsically&rdquo; tends to be a technology optimist or a pessimist is a
+persistent trait; it seems to be a matter of personality and
+socialization (or just call it <em>fate</em>: I don&rsquo;t want to go into any
+nature-nurture debates here). That glass, is it half full or half empty?</p>
+<p>All I could say to a hardcore technology optimist is that their utopia
+may be another person&rsquo;s dystopia. Especially if that other person is
+poor, or black, or poor and a black woman &hellip; and so on.</p>
+<p>Let me just end this section with a citation from a <a href="https://ali-alkhatib.com/blog/anthropological-intelligence">blog
+post</a> by Ali
+Alkhatib centered around the launch of the <a href="https://hai.stanford.edu/">Stanford institute for
+human-centered artificial intelligence
+(HAI)</a>. Referring to the <a href="https://hai.stanford.edu/blog/smart-interfaces-human-centered-ai">director&rsquo;s
+accompanying blog
+post</a>,
+he writes</p>
+<blockquote>
+<p><em>James opens with a story of an office that senses you slouching,
+registers that you&rsquo;re fatigued, intuits that your mood has shifted,
+and alters the ambiance accordingly to keep you alert throughout the
+day.</em></p>
+</blockquote>
+<p>You can head to Alkhatib&rsquo;s post (very worth reading) and read the
+continuation, expanding on the scenario. But for some people, this
+single sentence may already be enough.</p>
+<h3 id="and-now">And now?</h3>
+<p>At some point, an author is expected to wrap up and present ideas for
+improvement. With most of the topics touched upon here, this is yet
+another intimidating task. I&rsquo;ll give it a try anyway. The best synthesis
+I can come up with at the moment looks about like this.</p>
+<p>First, some approaches filed by Green under &ldquo;formalist&rdquo; can still make
+for a good start, or rather, can constitute a set of default measures,
+to be taken routinely. Most prominently, these include
+<a href="https://ui.adsabs.harvard.edu/abs/2018arXiv180309010G">dataset</a> and
+<a href="https://ui.adsabs.harvard.edu/abs/2018arXiv181003993M">model</a>
+documentation.</p>
+<p>Beyond the technical, I like the advice given in Baumer and Silberman&rsquo;s
+<a href="https://doi.org/10.1145/1978942.1979275"><em>When the Implication is Not to
+Design</em></a>. If the consequences,
+especially on socially marginalized groups, of a technological approach
+are unforeseeable, think whether the problem can be solved in a
+&ldquo;low-tech&rdquo; way. By all means, do <em>not</em> start with the solution and then,
+go find a problem.</p>
+<p>In some cases, even that may not be enough. With some goals, don&rsquo;t look
+for alternative ways to achieve them. Sometimes the goal itself has to
+be questioned.</p>
+<p>The same can be said for the other direction. With some technologies,
+there is no goal that could justify their application. This is because
+such a technology is <em>certain</em> to get misused. Facial recognition is one
+example.</p>
+<p>Lastly, let me finish on a speculative note.
+<a href="https://eprint.iacr.org/2015/1162">Rogaway</a>, already referred to above
+for his comments on technology optimism, calls on his colleagues, fellow
+cryptographers, to devise protocols in such a way that private
+communication stays private, that breaches are, in plain terms,
+impossible. While I personally can&rsquo;t think see how to port the analogy
+to <em>AI</em>, maybe others will be able to, drawing inspiration from his
+text. Until then, changes in politics and legislation seem to be the
+only recourse.</p>
+<hr>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>For brevity, I&rsquo;ll be subsuming deep learning and other
+contemporary machine learning methods under <em>AI</em>, following
+common(-ish) usage. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p> I can&rsquo;t hope to express this better than Maciej Cegłowski did
+<a href="https://idlewords.com/talks/superintelligence.htm">here</a>, so I
+won&rsquo;t elaborate on that topic any further. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>More on that below. Metrics used in machine learning mostly are
+proxies for things we really care about; there are lots of ways this
+can go wrong. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Meaning, a one-model-fits-all approach puts some groups at a
+disadvantage. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>cited after <a href="https://arxiv.org/abs/2002.08512">Thomas and Uminsky</a> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p>see e.g., <a href="https://data-feminism.mitpress.mit.edu/">DataFeminism</a>
+and
+<a href="https://www.ruhabenjamin.com/race-after-technology">RaceAfterTechnology</a>. <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+      </article>
+      
+    </main>
+    <nav class="end-nav side-padding">
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="/posts/ai_optimism/" class="card blog-card" rel="bookmark" >
+  
+  <div class="card-img-container">
+    <p class="card-img-overlay">Next Article</p>
+    <picture>
+      
+      <source srcset="/posts/ai_optimism/cherries.jpg">
+      <img src="/posts/ai_optimism/cherries.jpg" class="card-img" >
+    </picture>
+  </div>
+  
+  <article class="card-body">
+    <h2 class="card-title">How to be optimistic about AI</h2>
+    <p class="card-text">It&rsquo;s easy to be scared about AI.
+Not about those &ndash; I hesitate too choose a qualifier, lest it sound too mean &ndash; fantasies that AI could grow to take over the world and have nothing more useful to do than destroy humanity. I wouldn&rsquo;t want it to sound mean because it&rsquo;s not the fear that deserves to be deconstructed (assuming some people really have such a fear), &ndash; it&rsquo;s the psychology of those who create it.</p>
+    <div class="card-subtext muted-text">
+      <p>Posted <time datetime="2020-03-28 328:00">Mar 28, 2020</time></p>
+      <p>#Ethics and Society #Artificial Intelligence </p>
+    </div>
+  </article>
+</a>
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="/" class="card home-card" style="background-image: url( /img/bg.jpg )" rel="bookmark" >
+  Home
+</a>
+    </nav>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+  <script src="/js/core.min.js"></script>
+
+  </body>
+</html>

@@ -4,11 +4,18 @@
     <link>/categories/artificial-intelligence/</link>
     <description>Recent content in Artificial Intelligence on divergences</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/categories/artificial-intelligence/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>AI ethics is not an optimization problem</title>
+      <link>/posts/ai_ethics_optimization_problem/</link>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ai_ethics_optimization_problem/</guid>
+      <description>AI ethics is not an optimization problem Often, AI researchers and engineers think of themselves as neutral and &amp;ldquo;objective&amp;rdquo;, operating in a framework of strict formalization. Fairness and absence of bias, however, are social constructs; there is no objectivity, no LaTeX-typesettable remedies, no algorithmic way out. AI models are developed based on a history and deployed in a context. In AI as in data science, the very absence of action can be of political significance.</description>
+    </item><item>
       <title>How to be optimistic about AI</title>
       <link>/posts/ai_optimism/</link>
       <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>

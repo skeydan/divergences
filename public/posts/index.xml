@@ -4,11 +4,18 @@
     <link>/posts/</link>
     <description>Recent content in Posts on divergences</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>AI ethics is not an optimization problem</title>
+      <link>/posts/ai_ethics_optimization_problem/</link>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ai_ethics_optimization_problem/</guid>
+      <description>AI ethics is not an optimization problem Often, AI researchers and engineers think of themselves as neutral and &amp;ldquo;objective&amp;rdquo;, operating in a framework of strict formalization. Fairness and absence of bias, however, are social constructs; there is no objectivity, no LaTeX-typesettable remedies, no algorithmic way out. AI models are developed based on a history and deployed in a context. In AI as in data science, the very absence of action can be of political significance.</description>
+    </item><item>
       <title>How to be optimistic about AI</title>
       <link>/posts/ai_optimism/</link>
       <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
@@ -24,14 +31,6 @@ Not about those &amp;ndash; I hesitate too choose a qualifier, lest it sound too
       <guid>/posts/covid19_privacy/</guid>
       <description>Fortunately, there is something good even to COVID-19. Like so many other things that, in the real world, kill real people, it can be misused for propaganda in the name of abolishing basic rights and liberties. A popular victim, nowadays, attacked by both public and private sector alike, is privacy. Would you consent to giving up private information, if that could save lives? Exactly.
 A splendid specimen of anti-privacy propaganda appeared last Friday, March 13th, in the online edition of Frankfurter Allgemeine Zeitung &amp;ndash; arguably, Germany&amp;rsquo;s most reputable newspaper.</description>
-    </item><item>
-      <title>The hard problem of privacy</title>
-      <link>/posts/hard_problem_privacy/</link>
-      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/hard_problem_privacy/</guid>
-      <description>We live in a world of ever-diminishing privacy and ever-increasing surveillance - and this is a statement not just about openly-authoritarian regimes. Yet, we seem not to care that much, at least not until, for whatever reasons, we are personally affected by some negative consequence. This post wants to help increase awareness, casting a spotlight on recent history and also, letting words speak for themselves: Because nothing, to me, is less revealing than the &#34;visions&#34; that underly the actions.
-</description>
     </item>
   </channel>
 </rss>
