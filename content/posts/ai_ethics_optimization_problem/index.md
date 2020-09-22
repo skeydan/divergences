@@ -15,8 +15,6 @@ editor_options:
 
 ------------------------------------------------------------------------
 
-### AI ethics is not an optimization problem
-
 *Often, AI researchers and engineers think of themselves as neutral and
 "objective", operating in a framework of strict formalization. Fairness
 and absence of bias, however, are social constructs; there is no

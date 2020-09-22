@@ -14,7 +14,8 @@
       <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>/posts/ai_ethics_optimization_problem/</guid>
-      <description>AI ethics is not an optimization problem Often, AI researchers and engineers think of themselves as neutral and &amp;ldquo;objective&amp;rdquo;, operating in a framework of strict formalization. Fairness and absence of bias, however, are social constructs; there is no objectivity, no LaTeX-typesettable remedies, no algorithmic way out. AI models are developed based on a history and deployed in a context. In AI as in data science, the very absence of action can be of political significance.</description>
+      <description>Often, AI researchers and engineers think of themselves as neutral and &amp;ldquo;objective&amp;rdquo;, operating in a framework of strict formalization. Fairness and absence of bias, however, are social constructs; there is no objectivity, no LaTeX-typesettable remedies, no algorithmic way out. AI models are developed based on a history and deployed in a context. In AI as in data science, the very absence of action can be of political significance.
+Why this post, why now When you work in a field as intellectually-satisfying, challenging and inspiring as software design for machine learning, it is easy to focus on the technical, keeping out of sight the broader context.</description>
     </item><item>
       <title>How to be optimistic about AI</title>
       <link>/posts/ai_optimism/</link>
