@@ -7,6 +7,9 @@ displayInList: true
 displayInMenu: false
 draft: false
 dropCap: true
+resources:
+- name: featuredImage
+  src: pic.jpg
 title: AI ethics is not an optimization problem
 editor_options: 
   markdown: 
