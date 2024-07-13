@@ -1,0 +1,77 @@
+*Much as we humans like to believe, consciousness is not a neocortex thing, a matter of analysis and meta-analysis. Instead -- says Mark Solms, in his 2021 *The Hidden Spring: A Journey to the Source of Consciousness* -- instead, consciousness is all about feeling. A claim that, if we take it seriously (and I don't see why we shouldn't) has far-ranging consequences.*
+
+A few years ago, I found myself wanting to learn and, maybe, try to make up my mind, about a topic I -- surprisingly -- never had given much thought to, before: consciousness.
+
+However, having read around some (first and foremost, Blackmore & Troscianko's *Consciousness: An Introduction*, which I liked a lot), I certainly had *not* made up my mind. All I knew was that, certainly, I would not want to be a dualist; that the dominant neuroscience-guided theories felt simplistic; that I wasn't convinced quantum physics were all we need; and finally, that Daniel Dennett's *multiple drafts* formulation seemed most in concordance with my views. Otherwise though, there seemed to be a *Rashomon*-like touch to the topic: We'd be confronted with a set of parallel narratives -- just that, here, it wasn't too clear they were even trying to tell the same story.
+
+In most cases, though, at least I got an impression of the kind of story they wanted to tell. With one exception. Before I came across Blackmore & Troscianko, I did the obvious thing: look up "consciousness" in the Stanford Encyclopedia of Philosophy. And there they were: the mysterious [*qualia*](https://plato.stanford.edu/entries/qualia/.). (*Very* roughly, the "*what it is like*"s of perceiving something.[^1]) Now perception, to me, is of high interest; and it is something we know a lot about, on various levels. But that question: What is it like to see "red"? What is it like *to* *see*? -- What does it matter? The whole topic of qualia seemed utterly unimportant.
+
+But that is not something you say out loud, is it? When centuries of philosophical tradition speak otherwise.
+
+### Intrepid
+
+Now comes Mark Solms and, based on a solid foundation of brain science research, does away with the thing all in one sweep. Not at all impressed by scholarly authority, Solms argues with what I can't call by any other name than *common sense*.
+
+Just like other modes of perception, vision works without consciousness, without us being aware of what we see. It does not matter what I "feel" when I see red; all that matters is that I react in a situationally adequate way. (Depending on the circumstances, the correct thing to do may be to pick the raspberry, or to stop in front of the traffic light; but in neither case would it be fruitful for me to halt and reflect on the redness of the thing in question.)
+
+Wait -- let me repeat that phrase: *what I feel when* \[...\]. In that phrase, the magical term has made its appearance. This is the narrative, the intrepid narrative, Solms is telling: *Consciousness* equals *awareness* equals *feeling*.
+
+*Why*?
+
+The first equality, linking consciousness and awareness, would not appear that "far-fetched", from a more mainstream angle of view. And the essential thing about *feelings* is that *this their whole point*: *for us to be aware of them*.
+
+For Solms, feelings don't start with the dramatic, the intricate, or the sublime. Hunger is a feeling; being hypothermic is; both of them of different type, but comparable in function to the primary emotions [fear, rage, panic/grief, seeking, play, and care](#1). What all feelings have in common is that they guide our behavior. With "primitive" emotions such as thirst and freezing, the behavior they induce may directly be related to survival; "higher" emotions help in, as Solms nicely puts it, "feeling our way" through the vast (if left unfiltered) space of behavioral options opening up at any moment.
+
+
+In a nutshell, thus, the argumentation goes like this: How can a feeling guide me if I'm not aware? The hunger I don't feel won't make me eat.
+
+This, it seems to me, is the first great achievement of Solms' common sense: Forget about the redness of red and the blueness of blue; instead think how it feels to be *feeling*. I *feel*, therefore I'm conscious.
+
+The second achievement of common sense, however, is the principal reason I am writing this text; and it is of yet greater importance. Before we get to it, one last remark.
+
+Above, I was already suggesting that, with the topic of consciousness, we may sometimes feel like we're lost in a cobweb of narratives, with different nodes in that graph more or less densely connected, more or less compatible, more or less sharing a common language. And really it seems to me, now, that this is largely a matter of language; of the phrases we use, the economies of neural effort we derive from following the trodden paths of learned linguistic habits. When Solms challenges the neocortex-centric, analytic, higher-order, reflective view of consciousness, he does not just fight against the very solid windmills of anthropocentrism (the next thing I'll be talking about). He also has to counteract the effects of highly established, utterly present-in-our-minds expressions like "stream of consciousness". In fact, when first making my way through Blackmore & Troscianko's labyrinth of viewpoints, I found myself trying to relate those to familiar concepts like this one. Stream of consciousness, that perpetual narrator's voice ... And maybe even more than people with visual imagination, those with [aphantasia](#2), who can't see a thing "in their mind's eye" -- do have a mind's *ear*, and may not ever know how to turn off that voice. These stories they can't help listening to, be they more like comments or like dissections, seem to suggest that consciousness were "on top of", were *more* than what really there is. --
+
+
+Now, on to where common sense gets revolutionary.
+
+### The next (and desperately needed!) Copernican turn
+
+Without further ado, let me spell it out. There are kids, born [without a cortex](#3), who, in situations, look like they're enjoying themselves, have fun, feel happy about something. (Probably they also feel bad, in other situations, but these are not the situations Solms relates in this book.) If they look like they enjoy "it", and joy is a feeling, *why would we doubt that they're feeling something*? Isn't this common sense, as well: If someone, a person -- let me go further already -- a *being* looks like they sense, feel, experience, what justification do we have to claim they are *just* *looking it*?
+
+
+Concretely, what Solms says is that at least all mammals, but to different degrees, also other classes share the brain structures associated with feeling. *Various degrees*: There is no on-or-off, no conscious-yes-or-no. If your cat purrs as you stroke her, would you assume she doesn't have fun? If I see a crow monitoring the grasslands, should I think there's no intent there, no purpose? If the flower aligns itself with the sun --
+
+We don't know. All we can surmise is that there is a continuum; of intent, of experience, of feeling. Maybe there also is an other-ness, something we humans don't have concepts for. In any case, what follows from this is that we have no right to impose ourselves on nature, the way we've been doing for millennia. Not only is there no creation, -- man (or woman) certainly is not its culmination.
+
+And this is why I would like to write: Everyone should read this book. It is time, high time, for the next Copernican revolution, after the planetary one and the evolutionary one. We could call it the revolution of neuroscience, grounded as it is in brain science results, but I'd rather stay with what makes me think it's so over-due: the revolution of common sense.
+
+### A necessary remark, and two quick comments
+
+Before I end, I want to make sure I haven't, through this text, provoked a misunderstanding that might keep you from reading the book. I am not a neuroscientist, and in this write-up, I have distilled what in my view is the book's main message. But this is not a book of groundless opinions, and less even, of politics or zealotism. The (subcortical) structures that create consciousness *do* have names; the book has fifty pages of end notes linking to studies underpinning the conclusions drawn. You don't have to believe my condensation -- just read the book and see for yourself.
+
+Finally, to make clear that this is about the book's constitutive message, and not a product of all-embracing exaltation, let me name the two threads of argumentation I do not agree with.
+
+First -- and here, again, I have to stress that I am not a neuroscientist, and thus, can only speak from what is, it seems to me, an instance of common sense as well: Solms' espousal of Karl Friston and his framework seems to go, well, [pretty far](#4). Nothing more convincing than the view that the brain works by constantly updating its predictions; you don't have to be an expert in Bayes to believe that. But from there to the precise equations postulated by Friston it is a long way... (Truth be told, neither can I get over what I read in the Guardian, in 2020, when Covid was on its first steep surge ... [See for yourself](https://www.theguardian.com/world/2020/may/31/covid-19-expert-karl-friston-germany-may-have-more-immunological-dark-matter).)
+
+
+
+Secondly, I cannot *not* mention I have significant problems with how the book ends: the announcement that Solms and his group will try to engineer artificial consciousness. The arguments in favor are all too familiar: We need to do this to prove our scientific hypothesis; if we don't do it, someone else will; we'll patent the whole process; and as soon as it's done (hypothesis confirmed), we'll shut it off. Oh brave new world ...
+
+Those are comments I felt I needed to make, but neither takes away anything from the fact that, yes, this book is eminently important, and that yes, we, human beings, animals, earth all need that revolution to happen.
+
+------------------------------------------------------------------
+
+<a name="1">1:</a> This is the taxonomy of primary emotions embraced by Solms. It is mainly due to the work of Jaak Panksepp (see, e.g., Panksepp & Biven, The Archeology of Mind).
+
+<a name="2">2:</a> As of this writing, the only book I know on this topic is Alan Kendle's Aphantasia: Experiences, Perceptions, and Insights.
+
+<a name="3">3:</a> This condition is called hydranencephaly.
+
+
+<a name="4">4:</a> For details on the theory, see also the paper he wrote with Friston, [How and Why Consciousness Arises: Some Considerations from Physics and Physiology](https://discovery.ucl.ac.uk/id/eprint/10057681/1/Friston_Paper.pdf).
+
+
+
+Photo by <a href="https://unsplash.com/@hansjurgen007?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hans-Jurgen Mager</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+

@@ -1,0 +1,132 @@
+*We live in a world of ever-diminishing privacy and ever-increasing surveillance - and this is a statement not just about openly-authoritarian regimes. Yet, we seem not to care that much, at least not until, for whatever reasons, we are personally affected by some negative consequence. This post wants to help increase awareness, casting a spotlight on recent history and also, letting words speak for themselves: Because nothing, to me, is less revealing than the "visions" that underly the actions.*
+	
+Why "the hard problem" of privacy? Inspired by the study of consciousness, where some authors posit a difference between a "hard" and an "easy" problem, it is tempting to talk about privacy -- as perceived by machine learning (ML) people -- in a similar way. The "easy" part would be technical realization; including differential privacy (see e.g. [Differential privacy with TensorFlow](https://blogs.rstudio.com/tensorflow/posts/2019-12-20-differential-privacy/)) and federated learning (to be featured on the [TensorFlow for R](https://blogs.rstudio.com/tensorflow/) blog soon). The hard part would be to have people think that privacy actually *matters*.
+
+Of course, it depends on what is understood by privacy, or conversely, by surveillance. Last summer, Rachel Thomas, widely known as co-founder of *fast.ai* and founding director of the USF Center for Applied Data Ethics, wrote about [8 Things You Need to Know about Surveillance](https://www.fast.ai/2019/08/07/surveillance/). Everything she writes is highly important and deserves being thought about every single day. However, in a well-meaning community there should be little controversy about how justified these points are. My starting point here is different, and it, like the whole of this post, is highly subjective.
+
+### Soul mates
+
+Recently, I listened to an episode of Lex Fridman's [AI Podcast](https://www.youtube.com/watch?v=EYIKy_FM9x0&list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4). Depending on one's interest, this podcast has the most interesting guest list one could imagine: Donald Knuth, Daniel Kahneman, Gilbert Strang, Leonard Susskind, Yoshua Bengio ... to name just a few. But the podcast is nice to listen to not just because of the guest list. The interviewer himself impresses by his modest, warm and deeply human ways.
+
+On that backgound, I was immensely surprised when in the [episode with Cristos Goodrow](https://www.youtube.com/watch?v=nkWmiNRPU-c&list=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4&index=7), VP of Engineering at Google and head of Search and Discovery at YouTube, Fridman not just highly extolled Youtube's recommendation algorithm, but also expressed a "dream" that Youtube, besides similar-as-per-the-recommendation-algorithm videos, also suggested similar-as-per-the-algorithm *users* (min. 30/31):
+
+> I know I'm gonna ask for things that are impossible but I would love to cluster human beings, I would love to know who has similar trajectories as me ..." .
+
+The algorithm as a helper to find friends, or people like oneself, one would never get to meet otherwise. The most human dream ever, finding soul mates, powered by Youtube.
+
+Incapable to get over my surprise, I started thinking whether I should write this post.
+
+### Why aren't we more scared?
+
+It's not the most fruitful question, but helpless inability to understand probably starts like this, asking: Why aren't we more scared?
+
+For starters, we're used to getting stuff recommended all the time. On Amazon, I may have bought some books that were *purchased by similar users*. (On the other hand, the overall quality of recommendations is not like I would start to feel threatened by the magic.) So, advantages jump to the eye, while disadvantages are not immediately visible.
+
+Secondly, traditionally, in many cultures, we are accustomed to associate surveillance with the government, not private companies, just simply because historically, it was in fact the government, and the government only, that had the power to surveil and oppress. This is the classic picture of totalitarianism.
+
+However, as described by Shoshana Zuboff in her lengthy-ish, not-without-redundancies, but immensely important book *The age of surveillance capitalism*, the modern reality -- at least in the US and Europe -- is less direct and less easy to see through. (Evidently, the story is different in a country like China, where a social credit system has already been established.)
+
+### Surveillance capitalism in a nutshell
+
+Zuboff's book recounts, in great detail and citing a lot of sources public and private, how we ended up living in a world where each of our online actions is tracked by numerous "interested parties", where our phones send who-knows-what to whichever distant beneficiary, and where more and more of our "real-world", physical activity is recorded by agents we may not even know of.
+
+In short, the mechanism she describes is this: Companies big and small, the so-called "surveillance capitalists", have their business based on gathering, extracting, and processing information -- more than is needed to improve a product or a service. Instead, this "behavioral surplus" -- in processed form -- is sold to customers, which may be everything from other businesses over banks and insurance companies to intelligence agencies and governments.
+
+With such a business model, *of course* a company is interested in optimizing its ML algorithms. The better the algorithms, the better the results that are sold to customers, and the better those results, the more that company is willing to pay. Online ads may look like a triviality, but they are in fact a great illustration of the principle: If our customer pays per click, and our business is "full-service" -- "don't worry about anything, we'll place your ad for you", then it's in my own best interest to show ads to the most susceptible users, in the most favorable circumstances. *Of course* we'll get creative, thinking about how we can best determine those users and moments.
+
+As already hinted at above, with private companies in possession of data and inferences not publicly available, governments, intelligence services, and the military re-enter the picture. Zuboff describes how intelligence agencies craved information that was hard to obtain legally, but could be provided by companies operating in a lawless zone, always ahead of legislation. 9/11 was just a door opener; from then on, massive interlacing ensued between politics and companies in the information business, as seen for example, but not only, in the 2012 and 2016 US elections.
+
+Zuboff's book is full of interesting details, but this post is not meant to be a "best of". Rather, I'm wondering how the extent, as well as the importance of, what's going on could be made more salient to ML people -- not just to those to whom doubt and skepticism come naturally, but to well-meaning idealists as well.
+
+### Why we should care
+
+Trying to make this more salient, I can think of three things:
+
+-   Concisely stating a few facts that, important though they are in Zuboff's argumentation, deserve being pointed out even outside the concrete contexts in which they appear in the book;
+
+-   Calling attention, in a few lines instead of a time-consuming narrative, to what has *already happened*, in the "real world", in the very short time span since those new dynamics took off; and (the most impressive to me, personally)
+
+-   Relating, by *citation*, the actual "utopias" behind the reality.
+
+### (1) A few things to consider
+
+A common way to think about this is: We're using a free service (like a search engine), we have to pay somehow, so we're paying with our data. But -- data is collected and processed by products we *buy*, as well, be it phones, wearables or household appliances.
+
+Also, it is not like we get to *decide* whether and if so, how much privacy we're willing to give up in exchange for a service. As often noted, no-one has time to read through all the "privacy policies" we're bombarded with; and sometimes we're just told "you can disable this; but then feature x \[\[\[some vital feature, probably the one we bought it for\]\]\] can't be guaranteed to be working anymore".
+
+### (2) Not just online
+
+Even to people who spend most of their day online, being tracked on the web may still seem like a minor inconvenience. Of course, through our smartphones, we carry the web with us. Evidently, depending on what apps one has installed, one may receive friendly "invitations" to, say, pay a visit to McDonald's just as one passes there on one's lunchtime run. (Or maybe not, depending on whether the type of ongoing activity is already being taken into account.)
+
+Sure, such notifications disrupt the flow of whatever one's doing. But still: For some of us, it's easy to think that *who cares? I don't have those kinds of apps installed anyway*. Put more generally: Yes, all this online tracking is annoying. But as long as all that happens is me seeing more "targeted" ads, why bother?
+
+The recent years have seen a consistent and speedy extension of tracking in the real world.
+
+There was [Google Street View](https://en.wikipedia.org/wiki/Google_Street_View), filming the outdoors, a space once thought of as ephemeral, and subsequent attempts, by various actors, to map public *interiors*.
+
+There was [Google glass](https://en.wikipedia.org/wiki/Google_Glass), allowing to video- and audiotape people without their knowledge.
+
+Then, there are all kinds of wearables, also able to record not just the wearer's, but bystanders' data. The wearers themselves must be aware that *some* data is collected (why else buy the thing?), but don't necessarily know how it's being made use of, and what other data may be collected.
+
+Then, there are all kinds of IoT devices: TVs, vacuum cleaners, thermostats... Again, they are bought for a reason; but no-one can expect a TV to record what you're saying, or a vacuum cleaner to transmit back your floor plan.
+
+Then -- and this makes for a perfect transition to the last section, "utopias" -- there is *smart city*: not a utopia, but actual reality, [already being implemented in Toronto](https://en.wikipedia.org/wiki/Sidewalk_Toronto). Here is an excerpt from an [interview with CEO Dan Doctoroff](https://www.youtube.com/watch?v=JXN9QHHD8eA):
+
+> In effect, what we're doing is replicating the digital experience in physical space ... So ubiquitous connectivity; incredible computing power including artificial intelligence and machine learning; the ability to display data; sensing, including cameras and location data as well as other specialized sensors... We fund it all... through a very novel advertising model... We can actually then target ads to people in proximity, and then obviously over time track them through things like beacons and location services as well as their browsing activity.
+
+From these publicly made statements, it is hard to doubt what [The Globe and Mail reported](https://www.theglobeandmail.com/business/article-sidewalk-labs-document-reveals-companys-early-plans-for-data/) re. a leaked document, the *yellow book*, containing detailed outlines about how this system would be implemented:
+
+> Early on, the company notes that a Sidewalk neighbourhood would collect real-time position data "for all entities" -- including people. The company would also collect a "historical record of where things have been" and "about where they are going." Furthermore, unique data identifiers would be generated for "every person, business or object registered in the district," helping devices communicate with each other.
+
+The newspaper continues,
+
+> The document also describes reputation tools that would lead to a "new currency for community co-operation," effectively establishing a social credit system. Sidewalk could use these tools to "hold people or businesses accountable" while rewarding good behaviour, such as by rewarding a business's good customer service with an easier or cheaper renewal process on its licence.
+
+If, to people in "Western cultures", China, with its open endorsement and implementation of a social credit system, tended to seem "far, far away" -- now nothing seems as it did before.
+
+At this point, it's time to switch gears and look at the world view(s) behind those recent developments.
+
+### (3) Utopias
+
+Here is part of the vision of Mark Zuckerberg. Zuboff, aggregating information from several Zuckerberg-quoting, publicly available sources, writes (p.402)
+
+> Predictive models would enable the corporation to "tell you to what bar to go to" when you arrive in a strange city. The vision is detailed: when you arrive at the bar, the bartender has your favorite drink waiting, and you're able to look around the room and identify people just like you.
+
+Extending this to life overall, here we have a vision of total boredom; no exploration, no curiosity, no surprise, no learning. How probable is it that evolutionarily, humans are prepared to live in a world without uncertainty?
+
+How about regulation? Here is [Larry Page on laws and experimentation](https://www.businessinsider.com/google-ceo-larry-page-wants-a-place-for-experiments-2013-5):
+
+> If you look at the different kinds of laws we make, they're very old. The laws when we went public we're 50 years old. A law can't be right if it's 50 years old, like it's before the Internet, that's a pretty major change, in how you may go public.\[...\]
+
+> The other thing in my mind is we also haven't built mechanisms to allow experimentation. There's many, many exciting and important things you could do that you just can't do because they're illegal, or they're not allowed by regulation, and that makes sense, we don't want the world to change too fast. Maybe we should set aside a small part of the world ...\[...\]
+
+> I think as technologists we should have some safe places where we can try out some new things and figure out what is the effect on society, what's the effect on people, without having to deploy kind of into the normal world. \[...\]
+
+Or Zuckerberg again, on the [ancient social norm of privacy](https://www.theguardian.com/technology/2010/jan/11/facebook-privacy):
+
+> "People have really gotten comfortable not only sharing more information and different kinds, but more openly and with more people," he said. "That social norm is just something that has evolved over time."
+
+In this light, is a social credit system -- perhaps packaged differently -- really so far away, in Western cultures? Sometimes, a scenario sounds so silly that it's hard to see it as a real threat; but that may be just us being naive. Here is [another vision](https://www.newyorker.com/magazine/2015/01/19/know-feel), from Rana el Kaliouby, CEO at Affectiva:
+
+> We have been in conversations with a company in that space. It is an advertising-rewards company, and its business is based on positive moments. So if you set a goal to run three miles and you run three miles, that's a moment. Or if you set the alarm for six o'clock and you actually do get up, that's a moment. And they monetize these moments. They sell them. Like Kleenex can send you a coupon -- I don't know -- when you get over a sad moment. Right now, this company is making assumptions about what those moments are. And we're like, 'Guess what? We can capture them.'
+
+If that sounds like it needn't be taken seriously, here is a quote from *Social Physics*, a highly acclaimed opus by Alex Pentland, director of MIT Media Lab:
+
+> The social physics approach to getting everyone to cooperate is to use social network incentives rather than to use individual market incentives or to provide additional information. That is, we focus on changing the connections between people rather than focussing on getting people individually to change their behavior. The logic here is clear: Since exchanges between people are of enormous value to the participants, we can leverage those exchanges to generate social pressure for change.\[...\]
+
+> Social network incentives act by generating social pressure around the problem of finding cooperative behaviors, and so people experiment with new behaviors to find ones that are better.
+
+At this point, I feel like nothing has to be added to those visions. But let's get back to the beginning, Lex Fridman's fantasy of clustering users.
+
+### Expressing oneself
+
+Zuboff quotes Zuckerberg saying, "humans have such a deep need to express themselves" (p. 403). Evidently, this is what motivates Fridman's wish, and yes, it's a, or *the*, profoundly human thing.
+
+But, doesn't expressing oneself, if seen as *sharing*, involve a free decision when, what, and with whom to share?
+
+And what does it do to an experience if it is not just "there", a thing valuable in itself, but a means for others, to control and profit?
+
+Thanks for reading!
+
+
+
