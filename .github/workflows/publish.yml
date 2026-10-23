@@ -1,0 +1,57 @@
+# Every push to `main` on GitHub builds the blog with `make build` (the same command as on
+# a local machine: pinned Quarto, no R or Python packages needed, thanks to `freeze`) and
+# publishes `_site/` on GitHub Pages at https://divergences.xyz.
+# Needs Settings > Pages > Source set to "GitHub Actions". Can also be started by hand:
+# Actions tab > "Publish the blog" > Run workflow.
+
+name: Publish the blog
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# one publish at a time; a newer push waits for the running one instead of cancelling it
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the blog
+        uses: actions/checkout@v7
+
+      - name: Reuse the downloaded Quarto (cached; the version is pinned in the Makefile)
+        uses: actions/cache@v6
+        with:
+          path: .tools
+          key: quarto-${{ runner.os }}-${{ hashFiles('Makefile', 'tools/setup.sh') }}
+
+      - name: Build the site into _site/
+        run: make build
+
+      - name: Prepare GitHub Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload _site/
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish on GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,0 +1,228 @@
+{
+  "text-color": "#16343c",
+  "background-color": "#deebed",
+  "line-number-color": "#526c75",
+  "line-number-background-color": null,
+  "_comments": [
+    "divergences syntax theme, derived from a11y (MIT); colours checked for >= 4.5:1 on the code background"
+  ],
+  "metadata": {
+    "copyright": [
+      "SPDX-FileCopyrightText: 2017 Eric W Bailey",
+      "SPDX-FileCopyrightText: 2022 Mara Averick"
+    ],
+    "license": "SPDX-License-Identifier: MIT",
+    "name": "divergences light",
+    "revision": 1
+  },
+  "text-styles": {
+    "Normal": {
+      "text-color": "#16343c",
+      "italic": false,
+      "bold": false
+    },
+    "Other": {
+      "text-color": "#16343c",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Attribute": {
+      "text-color": "#8a5527",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "SpecialString": {
+      "text-color": "#006d59",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Annotation": {
+      "text-color": "#526c75",
+      "background-color": null,
+      "bold": false,
+      "italic": true,
+      "underline": false
+    },
+    "Function": {
+      "text-color": "#6646c0",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "String": {
+      "text-color": "#006d59",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "ControlFlow": {
+      "text-color": "#006b7e",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Operator": {
+      "text-color": "#3a5860",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Error": {
+      "text-color": "#8a5527",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "BaseN": {
+      "text-color": "#7d6200",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Alert": {
+      "text-color": "#8a5527",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Variable": {
+      "text-color": "#16343c",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "BuiltIn": {
+      "text-color": "#6646c0",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Extension": {
+      "text-color": "#006b7e",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Preprocessor": {
+      "text-color": "#006b7e",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Information": {
+      "text-color": "#526c75",
+      "background-color": null,
+      "bold": false,
+      "italic": true,
+      "underline": false
+    },
+    "VerbatimString": {
+      "text-color": "#006d59",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Warning": {
+      "text-color": "#526c75",
+      "background-color": null,
+      "bold": false,
+      "italic": true,
+      "underline": false
+    },
+    "Documentation": {
+      "text-color": "#526c75",
+      "background-color": null,
+      "bold": false,
+      "italic": true,
+      "underline": false
+    },
+    "Import": {
+      "text-color": "#006b7e",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Char": {
+      "text-color": "#006d59",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "DataType": {
+      "text-color": "#006b7e",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Float": {
+      "text-color": "#7d6200",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Comment": {
+      "text-color": "#526c75",
+      "background-color": null,
+      "bold": false,
+      "italic": true,
+      "underline": false
+    },
+    "CommentVar": {
+      "text-color": "#526c75",
+      "background-color": null,
+      "bold": false,
+      "italic": true,
+      "underline": false
+    },
+    "Constant": {
+      "text-color": "#7d6200",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "SpecialChar": {
+      "text-color": "#3a5860",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "DecVal": {
+      "text-color": "#7d6200",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "Keyword": {
+      "text-color": "#006b7e",
+      "background-color": null,
+      "bold": false,
+      "italic": false,
+      "underline": false
+    }
+  }
+}

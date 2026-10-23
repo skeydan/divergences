@@ -1,0 +1,88 @@
+project:
+  type: website
+  output-dir: _site
+  # builds the category and tag pages from the posts' front matter (nothing to do by hand)
+  pre-render: tools/taxonomy.py
+  render:
+    - "*.qmd"
+    - "posts/*/index.qmd"
+    - "category/*.qmd"
+    - "tag/*.qmd"
+    - "examples/*.qmd"
+    - "!README.md"
+  resources:
+    - assets/fonts/
+    - assets/viz.js
+    - robots.txt
+    - _redirects
+    - examples/nino34.csv
+
+website:
+  title: "divergences"
+  description: "A blog by Sigrid Keydana. Opinions are exclusively mine."
+  site-url: https://divergences.xyz
+  open-graph: true
+  search:
+    location: navbar
+    type: overlay
+  page-navigation: false
+  back-to-top-navigation: true
+  navbar:
+    left:
+      - text: Posts
+        href: posts.qmd
+      - text: Topics
+        href: topics.qmd
+      - text: Archive
+        href: archive.qmd
+      - text: About
+        href: about.qmd
+    right:
+      - icon: rss
+        href: index.xml
+        aria-label: RSS feed
+  page-footer:
+    left: '<span data-i18n="tagline">A blog by Sigrid Keydana. Opinions are exclusively mine.</span>'
+    right:
+      - text: RSS
+        href: index.xml
+      - text: Archive
+        href: archive.qmd
+
+format:
+  html:
+    theme:
+      # dark is listed first = the default; the reader's choice from the toggle is remembered
+      dark: [assets/theme-dark.scss, assets/divergences.scss]
+      light: [assets/theme-light.scss, assets/divergences.scss]
+    highlight-style:
+      light: assets/syntax-light.theme
+      dark: assets/syntax-dark.theme
+    include-in-header: [assets/head.html, assets/i18n.html]
+    css: [assets/fonts/fonts.css, assets/categories.css]
+    # dates are written as 2024-07-13 and shown in the reader's language by assets/i18n.html
+    date-format: "YYYY-MM-DD"
+    lang: en-GB
+    canonical-url: true
+    smooth-scroll: false
+    link-external-newwindow: false
+    code-copy: hover
+    code-overflow: scroll
+    anchor-sections: true
+    footnotes-hover: true
+    reference-location: margin
+    citation-location: margin
+    fig-responsive: true
+    lightbox: auto
+    email-obfuscation: javascript
+    filters:
+      - tools/divergences.lua
+    template-partials:
+      - assets/title-block.html
+
+# R / Python code in posts runs once when you render, then is "frozen":
+# results are stored in _freeze/ (commit it) and reused until you change that post.
+execute:
+  freeze: auto
+  echo: true
+  warning: false

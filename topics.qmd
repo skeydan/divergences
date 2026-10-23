@@ -1,0 +1,15 @@
+---
+title: "Topics"
+i18n-title: topics
+description: "Every category and every tag on this blog."
+i18n-desc: topicsDesc
+body-classes: dv-wide
+page-layout: full
+toc: false
+listing:
+  id: topics
+  contents: "posts/*/index.qmd"
+  template: assets/listing-topics.ejs
+  sort: "date desc"
+  fields: [title, date, categories, tags, lang]
+---

@@ -1,0 +1,52 @@
+/*-- scss:defaults --*/
+// divergences, light: very light cyan paper (no pure white anywhere), deep teal ink; nuances of cyan with
+// excursions to teal-green, blue, violet, brown and a yellow accent.
+$body-bg: #e9f3f4;
+$body-color: #0c2a33;
+$link-color: #006b7e;
+$primary: #006b7e;
+$secondary: #3a5860;
+$success: #006d59;
+$warning: #7d6200;
+$border-color: #c9dcdf;
+$code-color: #16343c;
+$code-bg: #deebed;
+$navbar-bg: #e9f3f4;
+$navbar-fg: #0c2a33;
+$navbar-hl: #006b7e;
+$footer-bg: #dfedef;
+$footer-fg: #526c75;
+$text-muted: #526c75;
+$toc-color: #3a5860;
+$popover-bg: #f3f9fa;
+$component-active-bg: #cfe6ea;
+$component-active-color: #0c2a33;
+
+/*-- scss:rules --*/
+:root {
+  color-scheme: light;
+  --dv-bg: #e9f3f4;
+  --dv-surface: #f3f9fa;
+  --dv-surface-2: #dfedef;
+  --dv-code-bg: #deebed;
+  --dv-ink: #0c2a33;
+  --dv-ink-2: #3a5860;
+  --dv-muted: #526c75;
+  --dv-head: #083846;
+  --dv-rule: #c9dcdf;
+  --dv-link: #006b7e;
+  --dv-link-hover: #1f63ad;
+  --dv-yellow: #e3b21b;
+  --dv-yellow-wash: #f6e7a6;
+  --dv-shadow: 0 1px 2px rgba(8, 56, 70, 0.06), 0 10px 28px -14px rgba(8, 56, 70, 0.28);
+  /* the six hues: text colour (AA on page, card and wash), vivid "deco" colour, wash */
+  --h-cyan: #006b7e;   --h-cyan-deco: #0aa5bf;   --h-cyan-wash: #cfe6ea;
+  --h-teal: #006d59;   --h-teal-deco: #12a889;   --h-teal-wash: #cfe7e1;
+  --h-blue: #1f63ad;   --h-blue-deco: #3b82d6;   --h-blue-wash: #d5e1f1;
+  --h-violet: #6646c0; --h-violet-deco: #8a6be0; --h-violet-wash: #ded9f2;
+  --h-brown: #8a5527;  --h-brown-deco: #b5763f;  --h-brown-wash: #eadccf;
+  --h-amber: #7d6200;  --h-amber-deco: #e3b21b;  --h-amber-wash: #f1e6bf;
+  /* chart tokens (see assets/viz.js); checked for contrast and colour-vision deficiency */
+  --viz-surface: #e9f3f4; --viz-ink: #0c2a33; --viz-ink-2: #3a5860; --viz-muted: #526c75;
+  --viz-grid: #d3e3e6; --viz-axis: #b9cbcd;
+}

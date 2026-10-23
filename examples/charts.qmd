@@ -1,0 +1,113 @@
+---
+title: "Charts on this blog: a working example"
+description: "Not a post: a reference page showing how interactive charts and R/Python figures go into a post. Linked from the README only."
+toc: false
+search: false
+engine: markdown
+---
+
+This page is not listed anywhere on the site. It exists so you can copy from it.
+The chart below is an Observable JS cell: it is written in the post, runs in the
+reader's browser, follows light/dark mode, and needs nothing installed.
+The data file `nino34.csv` sits next to this page (put a post's data next to its `index.qmd`).
+
+```{ojs}
+//| echo: false
+import {darkMode, theme, colors, tipStyle, legend, FONT} from "/assets/viz.js"
+dark = darkMode()
+raw = FileAttachment("nino34.csv").csv({typed: true})
+data = raw.map(d => ({month: new Date(d.month + "-15"), anomaly: d.anomaly}))
+viewof range = Inputs.radio(new Map([["Since 1950", 1950], ["Last 30 years", 1996], ["Last 10 years", 2016]]),
+  {value: 1950, label: "Show"})
+```
+
+```{ojs}
+//| echo: false
+shown = data.filter(d => d.month.getFullYear() >= range)
+c = colors(dark)
+html`<div class="dv-viz">
+  <div style="font-family: ${FONT}; font-weight: 650; font-size: 1.05rem; color: ${c.ink}">Niño 3.4 sea surface temperature anomaly, °C</div>
+  <div style="font-family: ${FONT}; font-size: .82rem; color: ${c.muted}">Monthly, relative to 1981–2010. Data: NOAA PSL (ERSST v6).</div>
+  ${legend([["warmer than normal (El Niño side)", c.diverging.warm, "swatch"], ["cooler than normal (La Niña side)", c.diverging.cool, "swatch"]])}
+  ${Plot.plot({
+    ...theme(dark),
+    height: 300,
+    y: {grid: true, tickSize: 0, label: null, tickFormat: d => (d > 0 ? "+" : "") + d},
+    x: {line: false, tickSize: 0, label: null},
+    marks: [
+      Plot.areaY(shown, {x: "month", y1: 0, y2: d => Math.max(0, d.anomaly), fill: c.diverging.warm, fillOpacity: 0.35, curve: "step"}),
+      Plot.areaY(shown, {x: "month", y1: 0, y2: d => Math.min(0, d.anomaly), fill: c.diverging.cool, fillOpacity: 0.35, curve: "step"}),
+      Plot.ruleY([0], {stroke: c.axis}),
+      Plot.ruleY([0.5, -0.5], {stroke: c.grid}),
+      Plot.text([{y: 0.5, label: "+0.5"}, {y: -0.5, label: "−0.5"}], {frameAnchor: "right", y: "y", text: "label", dx: 30, fill: c.muted, fontSize: 10}),
+      Plot.line(shown, {x: "month", y: "anomaly", stroke: c.ink2, strokeWidth: 1.2, curve: "step"}),
+      Plot.ruleX(shown, Plot.pointerX({x: "month", stroke: c.muted, strokeWidth: 1})),
+      Plot.dot(shown, Plot.pointerX({x: "month", y: "anomaly", r: 4, fill: d => d.anomaly >= 0 ? c.diverging.warm : c.diverging.cool, stroke: c.surface, strokeWidth: 2})),
+      Plot.tip(shown, Plot.pointerX({x: "month", y: "anomaly", ...tipStyle(dark),
+        title: d => `${d.anomaly > 0 ? "+" : ""}${d.anomaly.toFixed(2)} °C\n${d.month.toLocaleDateString("en-GB", {month: "long", year: "numeric"})}`}))
+    ]
+  })}
+</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<details class="dv-viz-table"><summary>Show the numbers</summary>${Inputs.table(shown.slice().reverse(), {
+  columns: ["month", "anomaly"], header: {month: "Month", anomaly: "Anomaly (°C)"},
+  format: {month: d => d.toLocaleDateString("en-GB", {month: "short", year: "numeric"})}, rows: 12, width: {month: 120}})}</details>`
+```
+
+## The code for this chart
+
+Copy this into a post (as an `{ojs}` cell) and change the data and the marks.
+`theme(dark)` gives you the blog's fonts, quiet axes and the chart colours; `colors(dark)` gives you
+the individual colours (`series`, `sequential`, `diverging`, `ink`, `muted`, …).
+
+````markdown
+```{ojs}
+import {darkMode, theme, colors} from "/assets/viz.js"
+dark = darkMode()
+data = FileAttachment("my-data.csv").csv({typed: true})
+Plot.plot({
+  ...theme(dark),
+  marks: [
+    Plot.lineY(data, {x: "year", y: "value", stroke: colors(dark).series[0], strokeWidth: 2}),
+    Plot.tip(data, Plot.pointerX({x: "year", y: "value"}))
+  ]
+})
+```
+````
+
+## Figures from R or Python
+
+Code in `{r}` or `{python}` cells runs once when you render the post, and the figure is
+saved (`_freeze/`), so the site never needs R or Python to be rebuilt. With
+`renderings: [light, dark]` the cell makes two versions and the reader sees the one
+matching their mode.
+
+````markdown
+```{r}
+#| renderings: [light, dark]
+#| fig-alt: "Monthly Niño 3.4 anomalies since 1950"
+library(ggplot2)
+source("../../assets/theme_divergences.R")
+p <- ggplot(enso, aes(month, anomaly)) + geom_line(linewidth = 0.6)
+p + theme_divergences("light")
+p + theme_divergences("dark")
+```
+````
+
+````markdown
+```{python}
+#| renderings: [light, dark]
+import matplotlib.pyplot as plt
+for mode in ["light", "dark"]:
+    plt.style.use(f"../../assets/divergences-{mode}.mplstyle")
+    fig, ax = plt.subplots()
+    ax.plot(x, y)
+    plt.show()
+```
+````
+
+A figure you already have (a PNG or SVG) is just an image: put the file next to the post and write
+`![Caption that appears under the figure](figure.png){fig-alt="What the figure shows, for screen readers"}`.

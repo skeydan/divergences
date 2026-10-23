@@ -1,0 +1,49 @@
+/*-- scss:defaults --*/
+// divergences, dark: deep sea at night; the same six hues, stepped for the dark ground.
+$body-bg: #081a20;
+$body-color: #e1f0f2;
+$link-color: #4fd0e0;
+$primary: #4fd0e0;
+$secondary: #a7c3c8;
+$success: #4fd4b0;
+$warning: #ecc94b;
+$border-color: #1c3a43;
+$code-color: #d3e6e9;
+$code-bg: #051217;
+$navbar-bg: #081a20;
+$navbar-fg: #e1f0f2;
+$navbar-hl: #4fd0e0;
+$footer-bg: #0b2128;
+$footer-fg: #86a6ad;
+$text-muted: #86a6ad;
+$toc-color: #a7c3c8;
+$popover-bg: #0e252d;
+$component-active-bg: #15404a;
+$component-active-color: #e1f0f2;
+
+/*-- scss:rules --*/
+:root {
+  color-scheme: dark;
+  --dv-bg: #081a20;
+  --dv-surface: #0e252d;
+  --dv-surface-2: #0b2128;
+  --dv-code-bg: #051217;
+  --dv-ink: #e1f0f2;
+  --dv-ink-2: #a7c3c8;
+  --dv-muted: #86a6ad;
+  --dv-head: #d4f3f7;
+  --dv-rule: #1c3a43;
+  --dv-link: #4fd0e0;
+  --dv-link-hover: #7fb2ff;
+  --dv-yellow: #ecc94b;
+  --dv-yellow-wash: rgba(236, 201, 75, 0.2);
+  --dv-shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 12px 32px -16px rgba(0, 0, 0, 0.7);
+  --h-cyan: #4fd0e0;   --h-cyan-deco: #2bb8cf;   --h-cyan-wash: #133a43;
+  --h-teal: #4fd4b0;   --h-teal-deco: #22b48f;   --h-teal-wash: #133a39;
+  --h-blue: #7fb2ff;   --h-blue-deco: #4f8fe8;   --h-blue-wash: #1b3449;
+  --h-violet: #b9a0ff; --h-violet-deco: #9479ee; --h-violet-wash: #263148;
+  --h-brown: #dca878;  --h-brown-deco: #c08350;  --h-brown-wash: #2c3430;
+  --h-amber: #ecc94b;  --h-amber-deco: #d4ab22;  --h-amber-wash: #2f3a27;
+  --viz-surface: #081a20; --viz-ink: #e1f0f2; --viz-ink-2: #a7c3c8; --viz-muted: #86a6ad;
+  --viz-grid: #16323a; --viz-axis: #2a4a53;
+}

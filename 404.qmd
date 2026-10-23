@@ -1,0 +1,8 @@
+---
+title: "Nothing here"
+i18n-title: notfound
+toc: false
+search: false
+---
+
+[This page doesn't exist (any more). Try the [list of posts](/posts.html), the [archive](/archive.html), or the search at the top.]{data-i18n-html="notfoundText"}

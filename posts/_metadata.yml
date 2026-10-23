@@ -1,0 +1,9 @@
+# Defaults for every post (a post can override any of these in its own front matter).
+author: Sigrid Keydana
+toc: true
+toc-location: left
+toc-depth: 2
+toc-title: "On this page"
+# Every post gets the "post" layout (header with image, categories, tags, reading time).
+page-layout: article
+post-layout: true

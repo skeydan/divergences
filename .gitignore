@@ -1,0 +1,21 @@
+# local toolchain (downloaded by `make setup`)
+/.tools/
+# build output
+/_site/
+/.quarto/
+**/*.quarto_ipynb
+# generated on every build by tools/taxonomy.py
+/category/
+/tag/
+/_latest.md
+# local secrets / settings, never committed
+.env
+.env.*
+# python / R / editor clutter
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+.Rproj.user/
+.DS_Store
+/.luarc.json

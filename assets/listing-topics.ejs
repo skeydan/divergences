@@ -1,0 +1,40 @@
+<%
+// "Topics" page: every category (with its posts) and every tag, computed from the posts.
+const slug = (s) => String(s).replace(/ł/g, 'l').replace(/Ł/g, 'l').replace(/ß/g, 'ss').replace(/æ/g, 'ae').replace(/[øØ]/g, 'o')
+  .normalize('NFKD').replace(/[^\x00-\x7f]/g, '').toLowerCase().replace(/&/g, ' and ')
+  .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'post';
+const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const byCat = {}, tagCount = {};
+for (const item of items) {
+  for (const c of (item.categories || [])) (byCat[c] = byCat[c] || []).push(item);
+  for (const t of (item.tags || [])) tagCount[t] = (tagCount[t] || 0) + 1;
+}
+const cats = Object.keys(byCat).sort((a, b) => byCat[b].length - byCat[a].length || a.localeCompare(b));
+const tags = Object.keys(tagCount).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+const max = Math.max(1, ...Object.values(tagCount));
+%>
+
+```{=html}
+<section class="dv-topics" aria-labelledby="cats-h">
+<h2 id="cats-h" class="dv-section-h no-anchor" data-i18n="categories">Categories</h2>
+<div class="dv-topic-grid">
+<% for (const c of cats) { %>
+  <article class="dv-topic" data-cat="<%- slug(c) %>">
+    <h3 class="no-anchor"><a href="category/<%- slug(c) %>.html"><%= esc(c) %></a> <span class="dv-topic-n"><%= byCat[c].length %></span></h3>
+    <ul>
+    <% for (const it of byCat[c].slice(0, 4)) { %><li><a href="<%- it.path %>"><%= it.title %></a></li><% } %>
+    </ul>
+    <% if (byCat[c].length > 4) { %><a class="dv-more" href="category/<%- slug(c) %>.html" data-i18n="allN" data-n="<%= byCat[c].length %>">all <%= byCat[c].length %> posts &rarr;</a><% } %>
+  </article>
+<% } %>
+</div>
+</section>
+<section class="dv-tagcloud" aria-labelledby="tags-h">
+<h2 id="tags-h" class="dv-section-h no-anchor" data-i18n="tags">Tags</h2>
+<ul class="dv-tags dv-tags-cloud">
+<% for (const t of tags) { const w = tagCount[t] / max; %>
+  <li><a class="dv-tag" style="--w: <%= w.toFixed(2) %>" href="tag/<%- slug(t) %>.html"><%= esc(t) %><span class="dv-tag-n"><%= tagCount[t] %></span></a></li>
+<% } %>
+</ul>
+</section>
+```

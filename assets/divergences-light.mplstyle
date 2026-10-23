@@ -1,0 +1,27 @@
+# matplotlib style for divergences (light). In a post: plt.style.use("../../assets/divergences-light.mplstyle")
+figure.facecolor: e9f3f4
+axes.facecolor: e9f3f4
+savefig.facecolor: e9f3f4
+axes.edgecolor: d3e3e6
+axes.labelcolor: 3a5860
+axes.titlecolor: 0c2a33
+axes.titleweight: bold
+axes.titlelocation: left
+axes.grid: True
+axes.axisbelow: True
+grid.color: d3e3e6
+grid.linewidth: 0.6
+axes.spines.top: False
+axes.spines.right: False
+axes.spines.left: False
+xtick.color: 526c75
+ytick.color: 526c75
+xtick.major.size: 0
+ytick.major.size: 0
+text.color: 3a5860
+legend.frameon: False
+lines.linewidth: 2
+lines.solid_capstyle: round
+axes.prop_cycle: cycler('color', ['0a8fa8', 'c0662a', '6a4bc4', 'a87d00', '2f6fc0', '0f8a66'])
+font.family: sans-serif
+font.sans-serif: Bricolage Grotesque, DejaVu Sans, Arial

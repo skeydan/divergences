@@ -1,0 +1,9 @@
+---
+title: "About"
+i18n-title: about
+toc: false
+---
+
+This is the personal blog of Sigrid Keydana.
+
+Opinions are exclusively mine.

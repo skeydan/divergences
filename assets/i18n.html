@@ -1,0 +1,181 @@
+<script>
+/* divergences: English / French interface.
+ * The interface language comes from the reader's choice (EN/FR switch in the menu bar,
+ * remembered in localStorage) or else from the browser's language. Post texts are never
+ * translated: a post is written in one language (its `lang:` field).
+ * To add or change a string: edit STR below (same key in both languages). */
+(function () {
+  var STR = {
+    en: {
+      posts: "Posts", topics: "Topics", archive: "Archive", about: "About",
+      tagline: "A blog by Sigrid Keydana. Opinions are exclusively mine.",
+      latest: "Latest post", readpost: "Read the post →", recent: "Recent posts",
+      categories: "Categories", tags: "Tags", allposts: "All posts →",
+      alltopics: "All topics", alltopicsArrow: "all topics & tags →",
+      category: "Category", tag: "Tag", language: "Language", all: "All",
+      minread: "{n} min read", min: "{n} min", updated: "updated",
+      nposts: ["{n} post", "{n} posts"], allN: "all {n} posts →",
+      rsspage: "RSS feed for this page",
+      postsDesc: "All posts, newest first.", topicsDesc: "Every category and every tag on this blog.",
+      toc: "On this page", backtotop: "Back to top", notfound: "Nothing here",
+      notfoundText: 'This page doesn’t exist (any more). Try the <a href="/posts.html">list of posts</a>, the <a href="/archive.html">archive</a>, or the search at the top.',
+      switchLabel: "Interface language", search: "Search"
+    },
+    fr: {
+      posts: "Articles", topics: "Thèmes", archive: "Archives", about: "À propos",
+      tagline: "Un blog de Sigrid Keydana. Les opinions exprimées ici n’engagent que moi.",
+      latest: "Dernier article", readpost: "Lire l’article →", recent: "Articles récents",
+      categories: "Catégories", tags: "Mots-clés", allposts: "Tous les articles →",
+      alltopics: "Tous les thèmes", alltopicsArrow: "tous les thèmes et mots-clés →",
+      category: "Catégorie", tag: "Mot-clé", language: "Langue", all: "Toutes",
+      minread: "{n} min de lecture", min: "{n} min", updated: "mis à jour",
+      nposts: ["{n} article", "{n} articles"], allN: "les {n} articles →",
+      rsspage: "Flux RSS de cette page",
+      postsDesc: "Tous les articles, du plus récent au plus ancien.", topicsDesc: "Toutes les catégories et tous les mots-clés du blog.",
+      toc: "Sur cette page", backtotop: "Retour en haut", notfound: "Rien ici",
+      notfoundText: 'Cette page n’existe pas (ou plus). Essayez la <a href="/posts.html">liste des articles</a>, les <a href="/archive.html">archives</a> ou la recherche en haut de la page.',
+      switchLabel: "Langue de l’interface", search: "Rechercher"
+    }
+  };
+  var SEARCH_FR = {
+    "search-no-results-text": "Aucun résultat",
+    "search-matching-documents-text": "documents correspondants",
+    "search-copy-link-title": "Copier le lien de la recherche",
+    "search-hide-matches-text": "Masquer les autres résultats",
+    "search-more-match-text": "autre résultat dans ce document",
+    "search-more-matches-text": "autres résultats dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Valider",
+    "search-label": "Rechercher"
+  };
+
+  function detect() {
+    try { var s = localStorage.getItem("dv-lang"); if (s === "en" || s === "fr") return s; } catch (e) {}
+    var langs = navigator.languages || [navigator.language || "en"];
+    for (var i = 0; i < langs.length; i++) {
+      var l = String(langs[i]).slice(0, 2).toLowerCase();
+      if (l === "fr" || l === "en") return l;
+    }
+    return "en";
+  }
+  var lang = detect();
+  document.documentElement.setAttribute("data-ui", lang);
+
+  // Quarto's search box reads its labels from this JSON when the page loads.
+  if (lang === "fr") {
+    var so = document.getElementById("quarto-search-options");
+    if (so) {
+      try {
+        var opts = JSON.parse(so.textContent);
+        for (var k in SEARCH_FR) opts.language[k] = SEARCH_FR[k];
+        so.textContent = JSON.stringify(opts);
+      } catch (e) {}
+    }
+  }
+
+  function t(key, n) {
+    var v = (STR[lang] && STR[lang][key] !== undefined) ? STR[lang][key] : STR.en[key];
+    if (v === undefined) return null;
+    if (Array.isArray(v)) v = v[Number(n) === 1 ? 0 : 1];
+    return String(v).replace("{n}", n);
+  }
+
+  function fmtDate(iso, style) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
+    if (!m) return null;
+    var d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+    var o = style === "daymonth" ? { day: "numeric", month: "short", timeZone: "UTC" }
+                                 : { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" };
+    return new Intl.DateTimeFormat(lang === "fr" ? "fr-FR" : "en-GB", o).format(d);
+  }
+
+  function setText(el, key, html) {
+    if (!el.hasAttribute("data-en")) el.setAttribute("data-en", el.innerHTML);
+    var v = t(key, el.getAttribute("data-n"));
+    if (v === null) return;
+    if (lang === "en" && !el.hasAttribute("data-n") && !html) { el.innerHTML = el.getAttribute("data-en"); return; }
+    if (html) el.innerHTML = v; else el.textContent = v;
+  }
+
+  var NAV = { "posts.html": "posts", "topics.html": "topics", "archive.html": "archive", "about.html": "about" };
+
+  function apply() {
+    document.documentElement.setAttribute("data-ui", lang);
+    document.querySelectorAll("[data-i18n]").forEach(function (el) { setText(el, el.getAttribute("data-i18n"), false); });
+    document.querySelectorAll("[data-i18n-html]").forEach(function (el) { setText(el, el.getAttribute("data-i18n-html"), true); });
+    document.querySelectorAll(".navbar .nav-link, .nav-footer a").forEach(function (a) {
+      var href = (a.getAttribute("href") || "").split("/").pop();
+      var key = NAV[href];
+      var span = a.querySelector(".menu-text") || a;
+      if (key) setText(span, key, false);
+    });
+    var toc = document.getElementById("toc-title"); if (toc) setText(toc, "toc", false);
+    document.querySelectorAll("a.back-to-top, #quarto-back-to-top").forEach(function (a) {
+      if (!a.hasAttribute("data-en")) a.setAttribute("data-en", a.innerHTML);
+      a.innerHTML = '<i class="bi bi-arrow-up"></i> ' + t("backtotop");
+    });
+    document.querySelectorAll("time[datetime]").forEach(function (el) {
+      var f = fmtDate(el.getAttribute("datetime"), el.getAttribute("data-fmt"));
+      if (f) el.textContent = f;
+    });
+    var h1 = document.querySelector("h1.title[data-i18n]");
+    if (h1) document.title = document.title.replace(/^[^|–-]*/, h1.textContent + " ");
+    document.querySelectorAll(".dv-langswitch button").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-ui-lang") === lang));
+    });
+    var sw = document.querySelector(".dv-langswitch"); if (sw) sw.setAttribute("aria-label", t("switchLabel"));
+  }
+
+  function addSwitch() {
+    var tools = document.querySelector(".quarto-navbar-tools");
+    if (!tools || tools.querySelector(".dv-langswitch")) return;
+    var g = document.createElement("div");
+    g.className = "dv-langswitch";
+    g.setAttribute("role", "group");
+    ["en", "fr"].forEach(function (l) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("data-ui-lang", l);
+      b.setAttribute("lang", l);
+      b.title = l === "en" ? "English" : "Français";
+      b.textContent = l.toUpperCase();
+      b.addEventListener("click", function () {
+        lang = l;
+        try { localStorage.setItem("dv-lang", l); } catch (e) {}
+        apply();
+      });
+      g.appendChild(b);
+    });
+    tools.insertBefore(g, tools.firstChild);
+  }
+
+  // Language filter on post lists (shown when posts exist in more than one language).
+  function setupFilter() {
+    var buttons = document.querySelectorAll("[data-lang-filter]");
+    if (!buttons.length) return;
+    function show(which) {
+      buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-lang-filter") === which)); });
+      var years = {};
+      document.querySelectorAll(".dv-item").forEach(function (li) {
+        var on = which === "all" || li.getAttribute("data-lang") === which;
+        li.hidden = !on;
+        if (on) years[li.getAttribute("data-year")] = true;
+      });
+      document.querySelectorAll(".dv-year").forEach(function (y) { y.hidden = !years[y.getAttribute("data-year")]; });
+      var url = new URL(window.location.href);
+      if (which === "all") url.searchParams.delete("lang"); else url.searchParams.set("lang", which);
+      history.replaceState(null, "", url);
+    }
+    buttons.forEach(function (b) { b.addEventListener("click", function () { show(b.getAttribute("data-lang-filter")); }); });
+    var q = new URL(window.location.href).searchParams.get("lang");
+    if (q && document.querySelector('[data-lang-filter="' + q + '"]')) show(q);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    addSwitch();
+    apply();
+    setupFilter();
+  });
+})();
+</script>

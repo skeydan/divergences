@@ -1,0 +1,15 @@
+---
+title: "Archive"
+i18n-title: archive
+description: "All posts, newest first."
+i18n-desc: postsDesc
+body-classes: dv-wide
+page-layout: full
+toc: false
+listing:
+  id: archive
+  contents: "posts/*/index.qmd"
+  template: assets/listing-archive.ejs
+  sort: "date desc"
+  fields: [title, date, lang]
+---

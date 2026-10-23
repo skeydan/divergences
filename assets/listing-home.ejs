@@ -1,0 +1,58 @@
+<%
+// Home page: recent posts as cards, then the categories. (The latest post, large, comes
+// before this from _latest.md, which tools/taxonomy.py writes on every build.)
+const slug = (s) => String(s).replace(/ł/g, 'l').replace(/Ł/g, 'l').replace(/ß/g, 'ss').replace(/æ/g, 'ae').replace(/[øØ]/g, 'o')
+  .normalize('NFKD').replace(/[^\x00-\x7f]/g, '').toLowerCase().replace(/&/g, ' and ')
+  .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'post';
+const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const iso = (d) => String(d || '').slice(0, 10);
+const langOf = (item) => String(item.lang || 'en').slice(0, 2).toLowerCase();
+const minutes = (item) => { const m = String(item['reading-time'] || '').match(/\d+/); return m ? m[0] : ''; };
+const RECENT = 6;
+const latest = items[0];
+const recent = items.slice(1, 1 + RECENT);
+const byCat = {};
+for (const item of items) for (const c of (item.categories || [])) (byCat[c] = byCat[c] || []).push(item);
+const cats = Object.keys(byCat).sort((a, b) => byCat[b].length - byCat[a].length || a.localeCompare(b));
+const catLinks = (item) => (item.categories || []).map(c => `<a class="dv-cat" data-cat="${slug(c)}" href="category/${slug(c)}.html">${esc(c)}</a>`).join('');
+const meta = (item) => `<time datetime="${iso(item.date)}" data-fmt="long">${iso(item.date)}</time>` +
+  (minutes(item) ? `<span class="dv-dot" aria-hidden="true"></span><span data-i18n="min" data-n="${minutes(item)}">${minutes(item)} min</span>` : '') +
+  `<span class="dv-langbadge" data-lang="${langOf(item)}">${langOf(item)}</span>`;
+%>
+
+```{=html}
+<section class="dv-recent" aria-labelledby="dv-recent-h">
+  <div class="dv-section-head"><h2 id="dv-recent-h" class="dv-section-h no-anchor" data-i18n="recent">Recent posts</h2><a href="posts.html" class="dv-more" data-i18n="allposts">All posts &rarr;</a></div>
+  <div class="dv-cards">
+  <% for (const item of recent) { %>
+  <article class="dv-card" data-cat="<%- slug((item.categories || ['x'])[0]) %>" data-lang="<%- langOf(item) %>">
+    <% if (item.image) { %><a class="dv-card-img" href="<%- item.path %>" tabindex="-1" aria-hidden="true"><img src="<%- item.image %>" alt="" loading="lazy" decoding="async"></a><% } %>
+    <div class="dv-card-body">
+      <div class="dv-card-cats"><%= catLinks(item) %></div>
+      <h3 class="dv-card-title no-anchor"><a href="<%- item.path %>"><%= item.title %></a></h3>
+```
+
+::: {.dv-card-desc}
+<%= item.description || '' %>
+:::
+
+```{=html}
+      <div class="dv-item-meta"><%= meta(item) %></div>
+    </div>
+  </article>
+  <% } %>
+  </div>
+</section>
+<section class="dv-cattiles" aria-labelledby="dv-cats-h">
+  <div class="dv-section-head"><h2 id="dv-cats-h" class="dv-section-h no-anchor" data-i18n="categories">Categories</h2><a href="topics.html" class="dv-more" data-i18n="alltopicsArrow">all topics &amp; tags &rarr;</a></div>
+  <div class="dv-tiles">
+  <% for (const c of cats) { %>
+    <a class="dv-tile" data-cat="<%- slug(c) %>" href="category/<%- slug(c) %>.html">
+      <span class="dv-tile-name"><%= esc(c) %></span>
+      <span class="dv-tile-n" data-i18n="nposts" data-n="<%= byCat[c].length %>"><%= byCat[c].length %> post<%= byCat[c].length === 1 ? '' : 's' %></span>
+      <span class="dv-tile-latest"><%= byCat[c][0].title %></span>
+    </a>
+  <% } %>
+  </div>
+</section>
+```

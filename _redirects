@@ -1,0 +1,35 @@
+# Old addresses of the Publii blog (2024) -> new addresses. This is the one list to edit.
+# Netlify and Cloudflare read this file from the published folder as is. For GitHub Pages,
+# which ignores it, `make build` turns every line into a small forwarding page
+# (tools/redirect_pages.py); /feed.xml becomes a copy of the feed. Only /feed.json is lost there.
+/ai-ethics-is-not-an-optimization-problem.html     /posts/ai_ethics_optimization_problem/  301
+/ai-ethics-is-not-an-optimization-problem-2.html   /posts/ai_ethics_optimization_problem/  301
+/ai-ethics-is-not-an-optimization-problem-3.html   /posts/ai_ethics_optimization_problem/  301
+/ai-is-not-an-optimization-problem.html            /posts/ai_ethics_optimization_problem/  301
+/starting-to-think-about-ai-fairness.html          /posts/ai-fairness/  301
+/deep-learning-and-scientific-computing-with-r-torch-the-book.html  /posts/deep-learning-scientific-computing-R-torch/  301
+/forecasting-el-nino-southern-oscillation-enso.html  /posts/enso-prediction/  301
+/beyond-alchemy-a-first-look-at-geometric-deep-learning.html  /posts/geometric-deep-learning/  301
+/getting-started-with-deep-learning-on-graphs.html  /posts/graphdl/  301
+/upside-down-a-cats-still-a-cat-evolving-image-recognition-with-geometric-deep-learning.html  /posts/group-equivariant-cnn-1/  301
+/implementing-rotation-equivariance-group-equivariant-cnn-from-scratch.html  /posts/group-equivariant-cnn-2/  301
+/group-equivariant-neural-networks-with-escnn.html  /posts/group-equivariant-cnn-3/  301
+/the-hard-problem-of-privacy.html                  /posts/hard_problem_privacy/  301
+/what-are-large-language-models-what-are-they-not.html  /posts/llm-intro/  301
+/a-book-id-say-everyone-should-read-if-such-were-a-kind-of-thing-id-say.html  /posts/solms_consciousness/  301
+/convolutional-lstm-for-spatial-forecasting.html   /posts/torch-convlstm/  301
+/ao-nao-enso-a-wavelet-analysis-example.html       /posts/torchwavelets/  301
+/free-will-the-sapolsky-mitchell-debate.html       /posts/free-will-sapolsky-mitchell/  301
+/tags/ai-societal-impact/*        /category/ai-societal-impact.html  301
+/tags/books/*                     /category/books.html  301
+/tags/deep-learning/*             /category/deep-learning.html  301
+/tags/geometric-deep-learning/*   /category/geometric-deep-learning.html  301
+/tags/philosophy-sort-of/*        /category/philosophy-sort-of.html  301
+/tags/dissecting-the-hype/*       /tag/dissecting-the-hype.html  301
+/tags/social-credit/*             /tag/social-credit.html  301
+/tags/privacy/*                   /tag/privacy.html  301
+/tags                             /topics.html  301
+/tags/*                           /topics.html  301
+/feed.xml                         /index.xml  301
+/feed.json                        /index.xml  301
+/search.html                      /  301

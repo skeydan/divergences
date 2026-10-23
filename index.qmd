@@ -1,0 +1,25 @@
+---
+title: "divergences"
+pagetitle: "divergences"
+description: "A blog by Sigrid Keydana. Opinions are exclusively mine."
+dv-no-title: true
+page-layout: full
+body-classes: dv-wide dv-home
+toc: false
+listing:
+  id: home
+  contents: "posts/*/index.qmd"
+  template: assets/listing-home.ejs
+  sort: "date desc"
+  fields: [title, date, description, image, categories, tags, reading-time, lang]
+  feed: true
+---
+
+::: {.dv-intro}
+[divergences]{.dv-intro-name} [A blog by Sigrid Keydana. Opinions are exclusively mine.]{.dv-intro-tagline data-i18n="tagline"}
+:::
+
+{{< include _latest.md >}}
+
+::: {#home}
+:::

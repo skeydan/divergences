@@ -1,0 +1,77 @@
+<%
+// Post list: the Posts page and every category / tag page.
+const params = (typeof templateParams !== 'undefined' && templateParams) || {};
+const firstPath = items.length ? String(items[0].path || '') : '';
+const root = params.root !== undefined ? params.root : (firstPath.includes('posts/') ? firstPath.slice(0, firstPath.indexOf('posts/')) : '');
+const slug = (s) => String(s).replace(/ł/g, 'l').replace(/Ł/g, 'l').replace(/ß/g, 'ss').replace(/æ/g, 'ae').replace(/[øØ]/g, 'o')
+  .normalize('NFKD').replace(/[^\x00-\x7f]/g, '').toLowerCase().replace(/&/g, ' and ')
+  .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'post';
+const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const iso = (d) => String(d || '').slice(0, 10);
+const yearOf = (d) => iso(d).slice(0, 4);
+const langOf = (item) => String(item.lang || 'en').slice(0, 2).toLowerCase();
+const minutes = (item) => { const m = String(item['reading-time'] || '').match(/\d+/); return m ? m[0] : ''; };
+
+const counts = {}, langs = {};
+for (const item of items) {
+  for (const c of (item.categories || [])) counts[c] = (counts[c] || 0) + 1;
+  langs[langOf(item)] = (langs[langOf(item)] || 0) + 1;
+}
+const cats = Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
+const langNames = { en: 'English', fr: 'Français' };
+%>
+
+```{=html}
+<% if (params.chips) { %>
+<nav class="dv-chips" aria-label="Categories">
+  <% for (const c of cats) { %><a class="dv-chip" data-cat="<%- slug(c) %>" href="<%- root %>category/<%- slug(c) %>.html"><%= esc(c) %><span class="dv-chip-n"><%= counts[c] %></span></a><% } %>
+  <a class="dv-chip dv-chip-more" href="<%- root %>topics.html" data-i18n="alltopicsArrow">all topics &amp; tags &rarr;</a>
+</nav>
+<% } %>
+<% if (Object.keys(langs).length > 1) { %>
+<div class="dv-langfilter" role="group" aria-label="Language">
+  <span class="dv-langfilter-label" data-i18n="language">Language</span>
+  <button type="button" data-lang-filter="all" aria-pressed="true"><span data-i18n="all">All</span> <span class="dv-chip-n"><%= items.length %></span></button>
+  <% for (const l of Object.keys(langs).sort()) { %><button type="button" data-lang-filter="<%- l %>" aria-pressed="false"><%= langNames[l] || l.toUpperCase() %> <span class="dv-chip-n"><%= langs[l] %></span></button><% } %>
+</div>
+<% } %>
+<% if (params.count) { %>
+<p class="dv-count"><span data-i18n="nposts" data-n="<%= items.length %>"><%= items.length %> post<%= items.length === 1 ? '' : 's' %></span><% if (params.feed) { %> <span class="dv-dot" aria-hidden="true"></span> <a href="<%- params.feed %>" data-i18n="rsspage">RSS feed for this page</a><% } %></p>
+<% } %>
+<ol class="dv-list">
+<% let lastYear = null; %>
+<% for (const item of items) { %>
+<% const y = yearOf(item.date); if (y && y !== lastYear) { lastYear = y; %>
+<li class="dv-year" data-year="<%= y %>" aria-hidden="true"><span><%= y %></span></li>
+<% } %>
+<% const c0 = (item.categories || [])[0]; %>
+<li class="dv-item<%= item.image ? ' has-thumb' : '' %>" data-lang="<%- langOf(item) %>" data-year="<%= y %>"<% if (c0) { %> data-cat="<%- slug(c0) %>"<% } %>>
+  <div class="dv-item-text">
+    <div class="dv-item-meta">
+      <% if (item.date) { %><time datetime="<%= iso(item.date) %>" data-fmt="long"><%= iso(item.date) %></time><% } %>
+      <% if (minutes(item)) { %><span class="dv-dot" aria-hidden="true"></span><span data-i18n="min" data-n="<%= minutes(item) %>"><%= minutes(item) %> min</span><% } %>
+      <span class="dv-langbadge" data-lang="<%- langOf(item) %>"><%- langOf(item) %></span>
+    </div>
+    <h2 class="dv-item-title no-anchor"><a href="<%- item.path %>"><%= item.title %></a></h2>
+<% if (item.description) { %>
+```
+
+::: {.dv-item-desc}
+<%= item.description %>
+:::
+
+```{=html}
+<% } %>
+    <% if (item.categories && item.categories.length) { %>
+    <div class="dv-item-cats">
+      <% for (const c of item.categories) { %><a class="dv-cat" data-cat="<%- slug(c) %>" href="<%- root %>category/<%- slug(c) %>.html"><%= esc(c) %></a><% } %>
+    </div>
+    <% } %>
+  </div>
+  <% if (item.image) { %>
+  <a class="dv-item-thumb" href="<%- item.path %>" tabindex="-1" aria-hidden="true"><img src="<%- item.image %>" alt="" loading="lazy" decoding="async"></a>
+  <% } %>
+</li>
+<% } %>
+</ol>
+```

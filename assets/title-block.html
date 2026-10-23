@@ -1,0 +1,46 @@
+$if(dv-no-title)$
+$else$
+$if(post-layout)$
+<header id="title-block-header" class="quarto-title-block dv-post-head" data-lang="$post-lang$">
+  <div class="dv-kicker">
+    $if(category-links)$
+    <span class="dv-cats">
+      $for(category-links)$<a class="dv-cat" data-cat="$it.slug$" href="$it.href$">$it.name$</a>$endfor$
+    </span>
+    $endif$
+    <span class="dv-langbadge" data-lang="$post-lang$">$post-lang$</span>
+  </div>
+  $if(title)$<h1 class="title">$title$</h1>$endif$
+  $if(subtitle)$<p class="subtitle lead">$subtitle$</p>$endif$
+  $if(description)$
+  <div class="description">$description$</div>
+  $endif$
+  <div class="dv-meta">
+    $if(date)$<time class="date" datetime="$date$" data-fmt="long">$date$</time>$endif$
+    $if(reading-minutes)$<span class="dv-dot" aria-hidden="true"></span><span data-i18n="minread" data-n="$reading-minutes$">$reading-minutes$ min read</span>$endif$
+    $if(date-modified)$<span class="dv-dot" aria-hidden="true"></span><span><span data-i18n="updated">updated</span> <time datetime="$date-modified$" data-fmt="long">$date-modified$</time></span>$endif$
+  </div>
+  $if(tag-links)$
+  <ul class="dv-tags" aria-label="Tags">
+    $for(tag-links)$<li><a class="dv-tag" href="$it.href$">$it.name$</a></li>$endfor$
+  </ul>
+  $endif$
+  $if(image)$
+  $if(hide-image)$
+  $else$
+  <figure class="dv-hero">
+    <img src="$image$" alt="$if(image-alt)$$image-alt$$endif$" loading="eager" decoding="async">
+  </figure>
+  $endif$
+  $endif$
+</header>
+$else$
+<header id="title-block-header" class="quarto-title-block dv-page-head">
+  $if(title)$<h1 class="title"$if(i18n-title)$ data-i18n="$i18n-title$"$endif$>$title$</h1>$endif$
+  $if(subtitle)$<p class="subtitle lead">$subtitle$</p>$endif$
+  $if(description)$
+  <div class="description"$if(i18n-desc)$ data-i18n="$i18n-desc$"$endif$>$description$</div>
+  $endif$
+</header>
+$endif$
+$endif$

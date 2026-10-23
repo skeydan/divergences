@@ -1,0 +1,27 @@
+# matplotlib style for divergences (dark). In a post: plt.style.use("../../assets/divergences-dark.mplstyle")
+figure.facecolor: 081a20
+axes.facecolor: 081a20
+savefig.facecolor: 081a20
+axes.edgecolor: 16323a
+axes.labelcolor: a7c3c8
+axes.titlecolor: e1f0f2
+axes.titleweight: bold
+axes.titlelocation: left
+axes.grid: True
+axes.axisbelow: True
+grid.color: 16323a
+grid.linewidth: 0.6
+axes.spines.top: False
+axes.spines.right: False
+axes.spines.left: False
+xtick.color: 86a6ad
+ytick.color: 86a6ad
+xtick.major.size: 0
+ytick.major.size: 0
+text.color: a7c3c8
+legend.frameon: False
+lines.linewidth: 2
+lines.solid_capstyle: round
+axes.prop_cycle: cycler('color', ['1aa3bb', 'cf7036', '8e77e4', 'b88b0c', '5a8bdc', '279f78'])
+font.family: sans-serif
+font.sans-serif: Bricolage Grotesque, DejaVu Sans, Arial
